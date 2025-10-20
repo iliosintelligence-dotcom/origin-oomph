@@ -139,6 +139,35 @@ All colors MUST be HSL.
     font-family: 'Poppins', system-ui, -apple-system, sans-serif;
     font-weight: 500;
   }
+
+  /* Blog post prose styling */
+  .prose {
+    @apply text-foreground;
+  }
+
+  .prose h2 {
+    @apply text-2xl font-bold text-foreground mt-8 mb-4;
+  }
+
+  .prose h3 {
+    @apply text-xl font-bold text-foreground mt-6 mb-3;
+  }
+
+  .prose p {
+    @apply text-muted-foreground leading-relaxed mb-4;
+  }
+
+  .prose ul, .prose ol {
+    @apply text-muted-foreground my-4 ml-6;
+  }
+
+  .prose li {
+    @apply mb-2;
+  }
+
+  .prose a {
+    @apply text-secondary hover:text-secondary/80 underline;
+  }
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@500;600&display=swap');
