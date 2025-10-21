@@ -8,107 +8,114 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Base */
     --background: 0 0% 100%;
-    --foreground: 222 67% 20%;
+    --foreground: 0 0% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 67% 20%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 67% 20%;
+    --popover-foreground: 0 0% 10%;
 
-    /* Proxim Deep Blue */
+    /* Primary - Deep Blue (#1A3A8F) */
     --primary: 222 67% 33%;
     --primary-foreground: 0 0% 100%;
 
-    /* Vibrant Green */
+    /* Secondary - Vibrant Green (#00B259) */
     --secondary: 148 100% 35%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 0 0% 95%;
-    --muted-foreground: 222 20% 50%;
+    --muted-foreground: 0 0% 40%;
 
-    /* Warm Orange */
+    /* Accent - Warm Orange (#FF7A00) */
     --accent: 29 100% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 222 20% 90%;
-    --input: 222 20% 90%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
     --ring: 148 100% 35%;
 
-    /* Bright Yellow */
+    /* Warning - Bright Yellow (#FFCB05) */
     --warning: 47 100% 51%;
-    --warning-foreground: 222 67% 20%;
+    --warning-foreground: 0 0% 10%;
 
-    /* Deep Purple */
+    /* Info - Deep Purple (#5E2D79) */
     --info: 281 46% 33%;
     --info-foreground: 0 0% 100%;
 
-    --radius: 0.75rem;
+    /* Soft Gray (#F2F2F2) */
+    --soft-gray: 0 0% 95%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(222 67% 33%), hsl(281 46% 33%));
-    --gradient-cta: linear-gradient(90deg, hsl(148 100% 35%), hsl(148 100% 45%));
-    --gradient-accent: linear-gradient(135deg, hsl(29 100% 50%), hsl(47 100% 51%));
+    --radius: 0.625rem;
+
+    /* Creative Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(222 67% 33%) 0%, hsl(281 46% 33%) 100%);
+    --gradient-cta: linear-gradient(90deg, hsl(148 100% 35%) 0%, hsl(148 100% 45%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(29 100% 50%) 0%, hsl(47 100% 51%) 100%);
+    --gradient-vibrant: linear-gradient(120deg, hsl(281 46% 33%) 0%, hsl(222 67% 33%) 50%, hsl(148 100% 35%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
     
-    /* Shadows */
-    --shadow-soft: 0 2px 8px hsla(222, 67%, 33%, 0.08);
-    --shadow-medium: 0 4px 16px hsla(222, 67%, 33%, 0.12);
-    --shadow-strong: 0 8px 32px hsla(222, 67%, 33%, 0.16);
+    /* Elegant Shadows */
+    --shadow-soft: 0 2px 8px hsla(222, 67%, 33%, 0.06);
+    --shadow-card: 0 4px 12px hsla(222, 67%, 33%, 0.08);
+    --shadow-medium: 0 6px 20px hsla(222, 67%, 33%, 0.12);
+    --shadow-strong: 0 10px 32px hsla(222, 67%, 33%, 0.16);
+    --shadow-glow: 0 0 40px hsla(148, 100%, 35%, 0.2);
     
-    /* Transitions */
+    /* Smooth Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-    --radius: 0.75rem;
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222 67% 8%;
+    --background: 222 50% 8%;
     --foreground: 0 0% 98%;
 
-    --card: 222 67% 12%;
+    --card: 222 50% 12%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 222 67% 12%;
+    --popover: 222 50% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 148 100% 35%;
+    --primary: 148 100% 40%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 222 67% 33%;
+    --secondary: 222 67% 40%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 222 40% 18%;
+    --muted: 222 30% 18%;
     --muted-foreground: 0 0% 70%;
 
-    --accent: 29 100% 50%;
+    --accent: 29 100% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 222 40% 20%;
-    --input: 222 40% 20%;
+    --border: 222 30% 20%;
+    --input: 222 30% 20%;
     --ring: 148 100% 45%;
+    
+    --warning: 47 100% 60%;
+    --warning-foreground: 0 0% 10%;
+    
+    --info: 281 46% 40%;
+    --info-foreground: 0 0% 100%;
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

@@ -117,8 +117,12 @@ const Blog = () => {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-20 md:py-32 bg-gradient-to-br from-primary to-info">
-          <div className="container mx-auto px-4 text-center">
+        <section className="py-20 md:py-32 bg-gradient-to-br from-primary via-info to-secondary animate-gradient relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,203,5,0.1),transparent_50%),radial-gradient(circle_at_70%_50%,rgba(255,122,0,0.1),transparent_50%)]"></div>
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <Badge className="mb-6 bg-warning/20 text-warning-foreground border-warning/30 px-4 py-2 text-base font-semibold">
+              📚 Insights & Best Practices
+            </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
               Proxim! Blog
             </h1>
@@ -153,11 +157,11 @@ const Blog = () => {
               {blogPosts.map((post) => (
                 <Card
                   key={post.id}
-                  className="group hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer border-2 hover:border-secondary"
+                  className="group hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] cursor-pointer border-2 hover:border-secondary overflow-hidden"
                 >
                   <CardContent className="p-6 space-y-4">
                     <div className="flex items-center justify-between">
-                      <Badge variant="secondary" className="font-medium">
+                      <Badge variant="secondary" className="font-medium shadow-sm">
                         {post.category}
                       </Badge>
                       <div className="flex items-center text-sm text-muted-foreground">
@@ -166,19 +170,19 @@ const Blog = () => {
                       </div>
                     </div>
 
-                    <h3 className="text-xl font-bold text-foreground group-hover:text-secondary transition-colors line-clamp-2">
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-secondary transition-colors line-clamp-2 min-h-[3.5rem]">
                       {post.title}
                     </h3>
 
-                    <p className="text-muted-foreground line-clamp-3">{post.excerpt}</p>
+                    <p className="text-muted-foreground line-clamp-3 min-h-[4.5rem]">{post.excerpt}</p>
 
                     <div className="pt-4 border-t space-y-3">
                       <div className="flex items-center text-sm text-muted-foreground">
-                        <User className="w-4 h-4 mr-2" />
+                        <User className="w-4 h-4 mr-2 text-secondary" />
                         {post.author}
                       </div>
                       <div className="flex items-center text-sm text-muted-foreground">
-                        <Calendar className="w-4 h-4 mr-2" />
+                        <Calendar className="w-4 h-4 mr-2 text-secondary" />
                         {new Date(post.date).toLocaleDateString("en-US", {
                           year: "numeric",
                           month: "long",
@@ -188,7 +192,7 @@ const Blog = () => {
                     </div>
 
                     <Link to={`/blog/${post.slug}`} className="block">
-                      <Button variant="ghost" className="w-full group-hover:bg-secondary/10">
+                      <Button variant="ghost" className="w-full group-hover:bg-secondary/10 group-hover:text-secondary font-semibold">
                         Read More
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                       </Button>
@@ -201,21 +205,22 @@ const Blog = () => {
         </section>
 
         {/* Newsletter CTA */}
-        <section className="py-16 bg-muted">
-          <div className="container mx-auto px-4 text-center max-w-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <section className="py-16 bg-gradient-to-r from-secondary via-secondary to-accent relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)]"></div>
+          <div className="container mx-auto px-4 text-center max-w-2xl relative z-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-4">
               Stay updated with proximity marketing insights
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-secondary-foreground/90 mb-8">
               Get the latest tips, case studies, and industry trends delivered to your inbox
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Your email address"
-                className="flex-1 px-4 py-3 rounded-lg border-2 border-border focus:border-secondary outline-none"
+                className="flex-1 px-4 py-3 rounded-lg border-2 border-white/20 bg-white/10 text-secondary-foreground placeholder:text-secondary-foreground/60 focus:border-white/40 outline-none backdrop-blur"
               />
-              <Button variant="cta" size="lg">
+              <Button variant="default" size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-xl">
                 Subscribe
               </Button>
             </div>

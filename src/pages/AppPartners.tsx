@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
+import illustrationAppPartnership from "@/assets/illustration-app-partnership.png";
 
 const AppPartners = () => {
   // Revenue Calculator State
@@ -212,26 +213,48 @@ const AppPartners = () => {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-20 md:py-32 bg-gradient-to-br from-info to-primary relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+        <section className="py-20 md:py-32 bg-gradient-to-br from-info via-primary to-secondary relative overflow-hidden animate-gradient">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(0,178,89,0.15),transparent_50%),radial-gradient(circle_at_80%_50%,rgba(94,45,121,0.15),transparent_50%)]"></div>
           <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-4xl mx-auto text-center">
-              <Badge variant="secondary" className="mb-6 text-base px-4 py-2">
-                For App Developers
-              </Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
-                Turn Your Users Into Revenue
-              </h1>
-              <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 leading-relaxed">
-                Monetize your app with privacy-first proximity marketing. Add a new revenue stream without
-                compromising user experience.
-              </p>
-              <a href="#calculator">
-                <Button variant="default" size="lg" className="bg-secondary hover:bg-secondary/90">
-                  Calculate Your Revenue Potential
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </a>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-8 animate-slide-up">
+                <Badge variant="secondary" className="text-base px-4 py-2 font-semibold shadow-lg">
+                  💰 For App Developers & Publishers
+                </Badge>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight">
+                  Monetize your app with{" "}
+                  <span className="bg-gradient-to-r from-accent to-warning bg-clip-text text-transparent">
+                    proximity marketing
+                  </span>
+                </h1>
+                <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
+                  Turn your Nigerian user base into a revenue stream. Easy integration, privacy-first approach, and transparent revenue sharing.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a href="#calculator">
+                    <Button variant="hero" size="lg" className="w-full sm:w-auto shadow-2xl">
+                      Calculate Revenue Potential
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </a>
+                  <a href="#benefits">
+                    <Button 
+                      size="lg" 
+                      className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary w-full sm:w-auto"
+                    >
+                      Learn More
+                    </Button>
+                  </a>
+                </div>
+              </div>
+              <div className="relative animate-float">
+                <div className="absolute -inset-4 bg-gradient-to-r from-secondary to-accent rounded-2xl blur-2xl opacity-25 animate-pulse-glow"></div>
+                <img
+                  src={illustrationAppPartnership}
+                  alt="App partnership revenue growth visualization"
+                  className="relative rounded-2xl shadow-2xl w-full h-auto border-4 border-white/10"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -371,7 +394,7 @@ const AppPartners = () => {
         </section>
 
         {/* Benefits Grid */}
-        <section className="py-16 md:py-24">
+        <section id="benefits" className="py-16 md:py-24">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">

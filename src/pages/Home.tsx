@@ -3,10 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { MapPin, TrendingUp, BarChart3, Shield, Users, Zap, CheckCircle2, ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-nigeria-proximity.jpg";
+import heroImage from "@/assets/hero-creative-proximity.jpg";
 import illustrationGeofencing from "@/assets/illustration-geofencing.png";
 import illustrationRevenueGrowth from "@/assets/illustration-revenue-growth.png";
 import illustrationAnalytics from "@/assets/illustration-analytics.png";
+import illustrationAppPartnership from "@/assets/illustration-app-partnership.png";
+import illustrationDashboard from "@/assets/illustration-dashboard.png";
+import illustrationCustomerEngagement from "@/assets/illustration-customer-engagement.png";
 
 const Home = () => {
   const valueProps = [
@@ -14,7 +17,7 @@ const Home = () => {
       icon: MapPin,
       title: "Reach real people nearby",
       description: "With over 200 million Nigerians owning mobile devices, tap into the country's most pervasive medium. Your ads reach only consumers within walking distance of your shop.",
-      image: illustrationGeofencing,
+      image: illustrationCustomerEngagement,
     },
     {
       icon: TrendingUp,
@@ -24,9 +27,9 @@ const Home = () => {
     },
     {
       icon: BarChart3,
-      title: "Pay for performance",
-      description: "Our pay-per-action pricing means you invest in results, not impressions. You'll see clear ROI through our dashboard and track results in real-time.",
-      image: illustrationAnalytics,
+      title: "Measure results in real-time",
+      description: "Our pay-per-action pricing means you invest in results, not impressions. Track views, clicks, conversions and revenue through our intuitive dashboard.",
+      image: illustrationDashboard,
     },
   ];
 
@@ -100,36 +103,48 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-info to-primary py-20 md:py-32">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-info to-primary py-20 md:py-32 animate-gradient">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,178,89,0.1),transparent_50%),radial-gradient(circle_at_70%_50%,rgba(255,203,5,0.1),transparent_50%)]"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+            <div className="space-y-8 animate-slide-up">
+              <div className="inline-block">
+                <span className="px-4 py-2 bg-warning/20 text-warning-foreground rounded-full text-sm font-semibold border border-warning/30">
+                  🚀 Nigeria's #1 Proximity Marketing Platform
+                </span>
+              </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight">
-                Reach nearby customers in the moments that matter
+                Proximity marketing that drives{" "}
+                <span className="bg-gradient-to-r from-accent to-warning bg-clip-text text-transparent">
+                  local revenue
+                </span>
               </h1>
               <p className="text-xl text-primary-foreground/90 leading-relaxed">
-                With 140 million smartphone users in Nigeria, Proxim! is the proximity marketing platform built for Nigeria. We partner with popular mobile apps to deliver hyper-local notifications, coupons and promotions whenever customers are close to your business.
+                Reach 140 million Nigerian smartphone users when they're near your business. Drive foot traffic, boost conversions, and measure results with Nigeria's first privacy-first proximity marketing platform.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
-                  <Button variant="default" size="lg" className="bg-secondary hover:bg-secondary/90 w-full sm:w-auto">
+                  <Button variant="hero" size="lg" className="w-full sm:w-auto shadow-2xl">
                     Book a Demo
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
                 <Link to="/pricing">
-                  <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary w-full sm:w-auto">
+                  <Button 
+                    size="lg" 
+                    className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary w-full sm:w-auto"
+                  >
                     See Pricing
                   </Button>
                 </Link>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative animate-float">
+              <div className="absolute -inset-4 bg-gradient-to-r from-accent to-warning rounded-2xl blur-2xl opacity-20 animate-pulse-glow"></div>
               <img
                 src={heroImage}
-                alt="Nigerians using smartphones for proximity marketing in Lagos"
-                className="rounded-2xl shadow-2xl w-full h-auto"
+                alt="Proximity marketing visualization with Nigerian cityscape and location signals"
+                className="relative rounded-2xl shadow-2xl w-full h-auto border-4 border-white/10"
               />
             </div>
           </div>
