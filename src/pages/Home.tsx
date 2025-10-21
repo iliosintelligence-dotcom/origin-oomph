@@ -3,97 +3,97 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { MapPin, TrendingUp, BarChart3, Shield, Users, Zap, CheckCircle2, ArrowRight } from "lucide-react";
-import heroPhone from "@/assets/hero-phone.jpg";
-import illustrationReach from "@/assets/illustration-reach.png";
-import illustrationConversions from "@/assets/illustration-conversions.png";
+import heroImage from "@/assets/hero-nigeria-proximity.jpg";
+import illustrationGeofencing from "@/assets/illustration-geofencing.png";
+import illustrationRevenueGrowth from "@/assets/illustration-revenue-growth.png";
 import illustrationAnalytics from "@/assets/illustration-analytics.png";
 
 const Home = () => {
   const valueProps = [
     {
       icon: MapPin,
-      title: "Reach nearby users",
-      description: "Target customers when they're close to your business with precision geofencing.",
-      image: illustrationReach,
+      title: "Reach real people nearby",
+      description: "With over 200 million Nigerians owning mobile devices, tap into the country's most pervasive medium. Your ads reach only consumers within walking distance of your shop.",
+      image: illustrationGeofencing,
     },
     {
       icon: TrendingUp,
-      title: "Boost conversions",
-      description: "Turn foot traffic into revenue with timely, relevant proximity notifications.",
-      image: illustrationConversions,
+      title: "Increase foot traffic and sales",
+      description: "Localised messages delivered at the right time drive immediate action, boosting in-store visits and average spend. A Lagos eatery saw a 35% uplift in walk-ins after using Proxim!",
+      image: illustrationRevenueGrowth,
     },
     {
       icon: BarChart3,
-      title: "Measure results",
-      description: "Track reach, CTR, and revenue in real-time with powerful analytics.",
+      title: "Pay for performance",
+      description: "Our pay-per-action pricing means you invest in results, not impressions. You'll see clear ROI through our dashboard and track results in real-time.",
       image: illustrationAnalytics,
     },
   ];
 
   const howItWorks = [
-    { step: 1, title: "Define zones", description: "Set up geofences around your locations" },
-    { step: 2, title: "Connect app/business", description: "Integrate with our simple SDK or dashboard" },
-    { step: 3, title: "Notify nearby users", description: "Send targeted offers when customers are nearby" },
-    { step: 4, title: "Track & optimize", description: "Monitor performance and improve campaigns" },
+    { step: 1, title: "Integrate with apps", description: "We work with trusted Nigerian apps (maps, ride-hailing, delivery) to embed our proximity SDK with full developer support" },
+    { step: 2, title: "Create your offer", description: "Set a promotion, coupon or message. Choose radius, dates, times and call-to-action through our dashboard" },
+    { step: 3, title: "Reach nearby shoppers", description: "When users enter your area, partner apps deliver your message exactly when they're ready to buy" },
+    { step: 4, title: "Track results", description: "Analytics show views, redemptions and visits. Refine radius, timing and creative to maximise return" },
   ];
 
   const benefits = [
-    { icon: TrendingUp, title: "Revenue Growth", description: "Increase sales with location-based offers" },
-    { icon: Users, title: "Customer Growth", description: "Attract new customers in your area" },
-    { icon: Shield, title: "Privacy-First", description: "NDPR compliant and secure by design" },
-    { icon: MapPin, title: "Partnership Ready", description: "Easy integration for app partners" },
-    { icon: Zap, title: "Fast Setup", description: "Go live in minutes, not weeks" },
-    { icon: CheckCircle2, title: "Proven Success", description: "Trusted by leading Nigerian businesses" },
+    { icon: TrendingUp, title: "Revenue Growth", description: "Increase sales with location-based offers that drive immediate action" },
+    { icon: Users, title: "Reach Mobile Nigeria", description: "Tap into 140 million smartphone users across Nigeria's cities" },
+    { icon: Shield, title: "Privacy-First", description: "Anonymised data, NDPR compliant, users opt-in through partner apps" },
+    { icon: MapPin, title: "Hyperlocal Focus", description: "Target customers within walking distance of your business" },
+    { icon: Zap, title: "Quick Launch", description: "Sign up and go live within one business day" },
+    { icon: CheckCircle2, title: "Performance Pricing", description: "Pay only when customers engage with your offer" },
   ];
 
   const testimonials = [
     {
-      quote: "Proxim! helped us increase foot traffic by 45% in just 3 months. The ROI is incredible.",
-      author: "Adebayo Johnson",
-      role: "Owner, Lagos Retail Store",
+      quote: "Proxim! helped us bring in 27% more customers during lunch hours. The notifications felt personal and respectful, and our sales jumped within the first week.",
+      author: "Lola",
+      role: "Owner, Lagos Café",
     },
     {
-      quote: "As an app partner, we've unlocked a new revenue stream while improving user engagement.",
-      author: "Ngozi Okafor",
-      role: "CTO, Nigerian Fintech App",
+      quote: "Integrating Proxim!'s SDK into our lifestyle app was seamless. We've unlocked a steady revenue stream and our users enjoy relevant deals as they move around the city.",
+      author: "Chinedu",
+      role: "Product Manager, Ride-Sharing App",
     },
     {
-      quote: "The analytics dashboard gives us insights we never had before. Game changer for our marketing.",
+      quote: "A Lagos lifestyle app integrated Proxim! and saw a 14% increase in daily active sessions. Monthly ad revenue doubled within three months.",
       author: "Ibrahim Yusuf",
-      role: "Marketing Director, Abuja Restaurant Chain",
+      role: "Marketing Director, Lifestyle App",
     },
   ];
 
   const stats = [
-    { value: "2M+", label: "Users reached monthly" },
-    { value: "12%", label: "Average CTR" },
-    { value: "8x", label: "Revenue uplift" },
+    { value: "140M+", label: "Smartphone users in Nigeria" },
+    { value: "35%", label: "Average foot traffic increase" },
+    { value: "USD 0.50B", label: "Market size by 2030" },
   ];
 
   const faqs = [
     {
       q: "What is proximity marketing?",
-      a: "Proximity marketing uses location technology like GPS and Bluetooth to send targeted messages to customers when they're near your business, driving foot traffic and conversions.",
+      a: "It's the delivery of personalised messages to consumers' mobile devices when they're physically near your business. It relies on smartphones, GPS and connectivity to deliver relevant information in real time.",
     },
     {
-      q: "How does Proxim! ensure privacy compliance?",
-      a: "We're fully NDPR compliant with opt-in consent, encrypted data, and transparent privacy controls. User privacy is our top priority.",
+      q: "Does Proxim! store personal data?",
+      a: "No. Our technology works with anonymised location signals. Users must grant permission to partner apps, and we follow Nigeria's data-privacy laws.",
+    },
+    {
+      q: "How quickly can I start a campaign?",
+      a: "You can sign up, set your promotion and go live within one business day. Our team will guide you through the process.",
+    },
+    {
+      q: "Is it expensive?",
+      a: "Pricing starts with a free trial, and you only pay when customers engage with your offer. Plans scale as your business grows.",
     },
     {
       q: "What's the difference between app partners and business clients?",
       a: "App partners integrate our SDK to monetize their apps through proximity campaigns. Business clients use our platform to reach nearby customers and drive sales.",
     },
     {
-      q: "How long does integration take?",
-      a: "App partners can integrate our SDK in 1-2 days. Business clients can set up campaigns in minutes through our dashboard.",
-    },
-    {
-      q: "What payment methods do you accept?",
-      a: "We accept card payments, bank transfers, and mobile money. All plans are billed in Nigerian Naira.",
-    },
-    {
-      q: "Can I try before I buy?",
-      a: "Yes! We offer a free trial for business clients and a sandbox environment for app partners to test integration.",
+      q: "How does Proxim! comply with privacy rules?",
+      a: "We use anonymised location data and follow Nigeria's Data Protection Act. Customers only see offers if they've opted in through partner apps.",
     },
   ];
 
@@ -106,10 +106,10 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight">
-                Proximity marketing that drives local revenue
+                Reach nearby customers in the moments that matter
               </h1>
               <p className="text-xl text-primary-foreground/90 leading-relaxed">
-                Reach customers when they're nearby. Boost conversions with privacy-first location-based notifications for Nigerian businesses.
+                With 140 million smartphone users in Nigeria, Proxim! is the proximity marketing platform built for Nigeria. We partner with popular mobile apps to deliver hyper-local notifications, coupons and promotions whenever customers are close to your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
@@ -127,8 +127,8 @@ const Home = () => {
             </div>
             <div className="relative">
               <img
-                src={heroPhone}
-                alt="Proximity marketing notification on mobile phone"
+                src={heroImage}
+                alt="Nigerians using smartphones for proximity marketing in Lagos"
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />
             </div>

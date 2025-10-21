@@ -16,11 +16,25 @@ const Contact = () => {
             <div className="max-w-2xl mx-auto">
               <div className="text-center mb-12">
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                  Book a Demo
+                  Contact Proxim! Nigeria
                 </h1>
                 <p className="text-xl text-muted-foreground">
-                  See how Proxim! can drive revenue for your business
+                  Get started today – we respond within 24 hours
                 </p>
+              </div>
+
+              {/* Office Info */}
+              <div className="mb-12 p-6 bg-muted rounded-lg">
+                <h2 className="text-2xl font-bold text-foreground mb-4">Lagos Headquarters</h2>
+                <div className="space-y-2 text-muted-foreground">
+                  <p>Block C, 3rd Floor, Admiralty Way</p>
+                  <p>Lekki Phase I, Lagos, Nigeria</p>
+                  <p className="mt-4"><strong>Phone:</strong> +234 816 000 0000</p>
+                  <p><strong>Email:</strong> info@proxim.ng</p>
+                  <p className="mt-4 text-sm">
+                    <strong>Support Hours:</strong> Monday to Friday, 9:00 AM – 6:00 PM (West Africa Time)
+                  </p>
+                </div>
               </div>
 
               <form className="space-y-6">
@@ -47,8 +61,8 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" placeholder="What can we help you with?" />
+                  <Label htmlFor="subject">How can we help you?</Label>
+                  <Input id="subject" placeholder="Demo request, partnership enquiry, support, etc." />
                 </div>
 
                 <div className="space-y-2">
