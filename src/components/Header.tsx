@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,11 +25,12 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-secondary to-info rounded-lg flex items-center justify-center transition-transform group-hover:scale-110">
-              <span className="text-white font-bold text-xl">P!</span>
-            </div>
-            <span className="text-xl md:text-2xl font-bold text-primary">Proxim!</span>
+          <Link to="/" className="flex items-center group">
+            <img 
+              src={logo} 
+              alt="Proxim!" 
+              className="h-10 md:h-12 w-auto transition-opacity group-hover:opacity-80"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -37,10 +39,10 @@ const Header = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
                   isActive(item.path)
-                    ? "text-secondary bg-secondary/10"
-                    : "text-foreground hover:text-secondary hover:bg-muted"
+                    ? "text-primary bg-primary/10"
+                    : "text-foreground hover:text-primary hover:bg-muted"
                 }`}
               >
                 {item.name}
@@ -76,10 +78,10 @@ const Header = () => {
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                  className={`px-4 py-3 rounded-lg text-sm font-semibold transition-colors ${
                     isActive(item.path)
-                      ? "text-secondary bg-secondary/10"
-                      : "text-foreground hover:text-secondary hover:bg-muted"
+                      ? "text-primary bg-primary/10"
+                      : "text-foreground hover:text-primary hover:bg-muted"
                   }`}
                 >
                   {item.name}

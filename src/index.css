@@ -10,48 +10,48 @@ All colors MUST be HSL.
   :root {
     /* Base */
     --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    --foreground: 0 0% 5%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 0 0% 5%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 0 0% 5%;
 
-    /* Primary - Deep Blue (#1A3A8F) */
-    --primary: 222 67% 33%;
+    /* Primary - Proxim Orange (#FF6B35) */
+    --primary: 17 100% 60%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Vibrant Green (#00B259) */
-    --secondary: 148 100% 35%;
+    /* Secondary - Deep Charcoal (#1A1A1A) */
+    --secondary: 0 0% 10%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 95%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 35%;
 
-    /* Accent - Warm Orange (#FF7A00) */
-    --accent: 29 100% 50%;
+    /* Accent - Darker Orange (#E85D2E) */
+    --accent: 14 82% 54%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 148 100% 35%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 17 100% 60%;
 
-    /* Warning - Bright Yellow (#FFCB05) */
-    --warning: 47 100% 51%;
+    /* Warning - Amber (#FFA726) */
+    --warning: 32 100% 58%;
     --warning-foreground: 0 0% 10%;
 
-    /* Info - Deep Purple (#5E2D79) */
-    --info: 281 46% 33%;
+    /* Info - Navy Blue (#0D3B66) */
+    --info: 207 79% 23%;
     --info-foreground: 0 0% 100%;
 
-    /* Soft Gray (#F2F2F2) */
-    --soft-gray: 0 0% 95%;
+    /* Soft Gray */
+    --soft-gray: 0 0% 96%;
 
-    --radius: 0.625rem;
+    --radius: 0.5rem;
 
 
     --sidebar-background: 0 0% 98%;
@@ -65,48 +65,48 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222 50% 8%;
+    --background: 0 0% 8%;
     --foreground: 0 0% 98%;
 
-    --card: 222 50% 12%;
+    --card: 0 0% 12%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 222 50% 12%;
+    --popover: 0 0% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 148 100% 40%;
+    --primary: 17 100% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 222 67% 40%;
+    --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 222 30% 18%;
+    --muted: 0 0% 18%;
     --muted-foreground: 0 0% 70%;
 
-    --accent: 29 100% 55%;
+    --accent: 14 82% 54%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 222 30% 20%;
-    --input: 222 30% 20%;
-    --ring: 148 100% 45%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 17 100% 60%;
     
-    --warning: 47 100% 60%;
+    --warning: 32 100% 58%;
     --warning-foreground: 0 0% 10%;
     
-    --info: 281 46% 40%;
+    --info: 207 79% 23%;
     --info-foreground: 0 0% 100%;
     
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 17 100% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 17 100% 60%;
   }
 }
 
@@ -117,17 +117,23 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Nunito Sans', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+    font-family: 'Bodoni Moda', Georgia, serif;
     font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   button, input, select, textarea {
-    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-weight: 500;
+  }
+  
+  strong, b {
+    font-weight: 700;
   }
 
   /* Blog post prose styling */
@@ -156,8 +162,8 @@ All colors MUST be HSL.
   }
 
   .prose a {
-    @apply text-secondary hover:text-secondary/80 underline;
+    @apply text-primary hover:text-accent underline;
   }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
