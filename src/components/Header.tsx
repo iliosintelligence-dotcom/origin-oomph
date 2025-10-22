@@ -51,7 +51,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center">
             <Link to="/contact">
-              <Button variant="cta" size="lg">
+              <Button size="default">
                 Book a Demo
               </Button>
             </Link>
@@ -86,7 +86,7 @@ const Header = () => {
                 </Link>
               ))}
               <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="pt-2">
-                <Button variant="cta" size="lg" className="w-full">
+                <Button size="default" className="w-full">
                   Book a Demo
                 </Button>
               </Link>

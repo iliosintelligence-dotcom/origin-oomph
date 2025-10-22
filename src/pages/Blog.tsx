@@ -117,18 +117,16 @@ const Blog = () => {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-20 md:py-32 bg-gradient-to-br from-primary via-info to-secondary animate-gradient relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,203,5,0.1),transparent_50%),radial-gradient(circle_at_70%_50%,rgba(255,122,0,0.1),transparent_50%)]"></div>
-          <div className="container mx-auto px-4 text-center relative z-10">
-            <Badge className="mb-6 bg-warning/20 text-warning-foreground border-warning/30 px-4 py-2 text-base font-semibold">
-              📚 Insights & Best Practices
-            </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-              Proxim! Blog
-            </h1>
-            <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
-              Insights, best practices, and success stories from Nigeria's leading proximity marketing platform
-            </p>
+        <section className="py-20 md:py-32 bg-muted">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto space-y-6">
+              <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
+                Insights on proximity marketing in Nigeria
+              </h1>
+              <p className="text-xl text-muted-foreground">
+                Learn how to grow your business with location-based advertising
+              </p>
+            </div>
           </div>
         </section>
 
@@ -151,50 +149,37 @@ const Blog = () => {
         </section>
 
         {/* Blog Posts Grid */}
-        <section className="py-16 md:py-24">
+        <section className="py-20 md:py-32">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogPosts.map((post) => (
-                <Card
-                  key={post.id}
-                  className="group hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] cursor-pointer border-2 hover:border-secondary overflow-hidden"
-                >
+                <Card key={post.id} className="hover:border-secondary transition-colors">
                   <CardContent className="p-6 space-y-4">
                     <div className="flex items-center justify-between">
-                      <Badge variant="secondary" className="font-medium shadow-sm">
-                        {post.category}
-                      </Badge>
+                      <Badge variant="outline">{post.category}</Badge>
                       <div className="flex items-center text-sm text-muted-foreground">
                         <Clock className="w-4 h-4 mr-1" />
                         {post.readTime}
                       </div>
                     </div>
-
-                    <h3 className="text-xl font-bold text-foreground group-hover:text-secondary transition-colors line-clamp-2 min-h-[3.5rem]">
+                    <h3 className="text-xl font-bold text-foreground hover:text-secondary transition-colors">
                       {post.title}
                     </h3>
-
-                    <p className="text-muted-foreground line-clamp-3 min-h-[4.5rem]">{post.excerpt}</p>
-
+                    <p className="text-muted-foreground">{post.excerpt}</p>
                     <div className="pt-4 border-t space-y-3">
                       <div className="flex items-center text-sm text-muted-foreground">
-                        <User className="w-4 h-4 mr-2 text-secondary" />
+                        <User className="w-4 h-4 mr-2" />
                         {post.author}
                       </div>
                       <div className="flex items-center text-sm text-muted-foreground">
-                        <Calendar className="w-4 h-4 mr-2 text-secondary" />
-                        {new Date(post.date).toLocaleDateString("en-US", {
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                        })}
+                        <Calendar className="w-4 h-4 mr-2" />
+                        {new Date(post.date).toLocaleDateString()}
                       </div>
                     </div>
-
-                    <Link to={`/blog/${post.slug}`} className="block">
-                      <Button variant="ghost" className="w-full group-hover:bg-secondary/10 group-hover:text-secondary font-semibold">
+                    <Link to={`/blog/${post.slug}`}>
+                      <Button variant="ghost" size="sm" className="w-full">
                         Read More
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
                     </Link>
                   </CardContent>
@@ -205,24 +190,23 @@ const Blog = () => {
         </section>
 
         {/* Newsletter CTA */}
-        <section className="py-16 bg-gradient-to-r from-secondary via-secondary to-accent relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)]"></div>
-          <div className="container mx-auto px-4 text-center max-w-2xl relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-4">
-              Stay updated with proximity marketing insights
-            </h2>
-            <p className="text-lg text-secondary-foreground/90 mb-8">
-              Get the latest tips, case studies, and industry trends delivered to your inbox
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-1 px-4 py-3 rounded-lg border-2 border-white/20 bg-white/10 text-secondary-foreground placeholder:text-secondary-foreground/60 focus:border-white/40 outline-none backdrop-blur"
-              />
-              <Button variant="default" size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-xl">
-                Subscribe
-              </Button>
+        <section className="py-20 md:py-32 bg-secondary">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto space-y-8">
+              <h2 className="text-3xl md:text-5xl font-bold text-secondary-foreground">
+                Stay updated with proximity marketing insights
+              </h2>
+              <p className="text-xl text-secondary-foreground/90">
+                Get the latest tips, case studies, and industry trends delivered to your inbox
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  className="flex-1 px-6 py-4 rounded-lg border border-input bg-background"
+                />
+                <Button variant="primary" size="lg">Subscribe</Button>
+              </div>
             </div>
           </div>
         </section>

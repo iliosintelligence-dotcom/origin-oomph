@@ -82,7 +82,7 @@ const Contact = () => {
                   </label>
                 </div>
 
-                <Button type="submit" variant="cta" size="lg" className="w-full">
+                <Button type="submit" size="lg" className="w-full">
                   Send Message
                 </Button>
               </form>

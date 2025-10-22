@@ -103,48 +103,39 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-info to-primary py-20 md:py-32 animate-gradient">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,178,89,0.1),transparent_50%),radial-gradient(circle_at_70%_50%,rgba(255,203,5,0.1),transparent_50%)]"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-slide-up">
-              <div className="inline-block">
-                <span className="px-4 py-2 bg-warning/20 text-warning-foreground rounded-full text-sm font-semibold border border-warning/30">
-                  🚀 Nigeria's #1 Proximity Marketing Platform
-                </span>
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight">
-                Proximity marketing that drives{" "}
-                <span className="bg-gradient-to-r from-accent to-warning bg-clip-text text-transparent">
-                  local revenue
-                </span>
+      <section className="relative bg-primary py-20 md:py-32">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground leading-tight">
+                Proximity marketing that drives local revenue
               </h1>
-              <p className="text-xl text-primary-foreground/90 leading-relaxed">
-                Reach 140 million Nigerian smartphone users when they're near your business. Drive foot traffic, boost conversions, and measure results with Nigeria's first privacy-first proximity marketing platform.
+              <p className="text-xl text-primary-foreground/80 leading-relaxed">
+                Reach 140 million Nigerian smartphone users when they're near your business. Drive foot traffic, boost conversions, and measure results.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link to="/contact">
-                  <Button variant="hero" size="lg" className="w-full sm:w-auto shadow-2xl">
+                  <Button size="lg" className="w-full sm:w-auto">
                     Book a Demo
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
                 <Link to="/pricing">
                   <Button 
+                    variant="outline"
                     size="lg" 
-                    className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary w-full sm:w-auto"
+                    className="w-full sm:w-auto border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
                   >
                     See Pricing
                   </Button>
                 </Link>
               </div>
             </div>
-            <div className="relative animate-float">
-              <div className="absolute -inset-4 bg-gradient-to-r from-accent to-warning rounded-2xl blur-2xl opacity-20 animate-pulse-glow"></div>
+            <div>
               <img
                 src={heroImage}
-                alt="Proximity marketing visualization with Nigerian cityscape and location signals"
-                className="relative rounded-2xl shadow-2xl w-full h-auto border-4 border-white/10"
+                alt="Proximity marketing visualization"
+                className="rounded-lg w-full h-auto"
               />
             </div>
           </div>
@@ -152,77 +143,65 @@ const Home = () => {
       </section>
 
       {/* Value Proposition */}
-      <section className="py-16 md:py-24">
+      <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-20">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 max-w-3xl">
               Why Proxim! works for Nigerian businesses
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Transform location data into revenue with our powerful proximity marketing platform
-            </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="space-y-24">
             {valueProps.map((prop, idx) => (
-              <Card key={idx} className="border-2 hover:border-secondary transition-all duration-300 hover:shadow-xl">
-                <CardContent className="p-8 space-y-4">
-                  <div className="w-full h-48 mb-4 rounded-lg overflow-hidden bg-muted">
-                    <img src={prop.image} alt={prop.title} className="w-full h-full object-cover" />
-                  </div>
-                  <prop.icon className="w-12 h-12 text-secondary" />
-                  <h3 className="text-xl font-bold text-foreground">{prop.title}</h3>
-                  <p className="text-muted-foreground">{prop.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-16 md:py-24 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">How it works</h2>
-            <p className="text-lg text-muted-foreground">Four simple steps to proximity marketing success</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {howItWorks.map((step, idx) => (
-              <div key={idx} className="relative">
-                <div className="bg-card rounded-xl p-6 h-full shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-secondary to-info text-white flex items-center justify-center text-2xl font-bold mb-4">
-                    {step.step}
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
-                  <p className="text-muted-foreground">{step.description}</p>
+              <div key={idx} className={`grid md:grid-cols-2 gap-12 items-center ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+                <div className={idx % 2 === 1 ? 'md:order-2' : ''}>
+                  <img src={prop.image} alt={prop.title} className="w-full h-auto rounded" />
                 </div>
-                {idx < howItWorks.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                    <ArrowRight className="w-8 h-8 text-secondary" />
-                  </div>
-                )}
+                <div className={idx % 2 === 1 ? 'md:order-1' : ''}>
+                  <prop.icon className="w-10 h-10 text-secondary mb-4" />
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">{prop.title}</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed">{prop.description}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Benefits Grid */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Built for growth</h2>
-            <p className="text-lg text-muted-foreground">Everything you need to succeed with proximity marketing</p>
+      {/* How It Works */}
+      <section className="py-20 md:py-32 bg-muted">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">How it works</h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="space-y-12">
+            {howItWorks.map((step, idx) => (
+              <div key={idx} className="flex gap-6">
+                <div className="flex-shrink-0 w-12 h-12 rounded bg-secondary text-secondary-foreground flex items-center justify-center text-xl font-bold">
+                  {step.step}
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <section className="py-20 md:py-32">
+        <div className="container mx-auto px-4">
+          <div className="mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">Built for growth</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-12 max-w-5xl">
             {benefits.map((benefit, idx) => (
-              <Card key={idx} className="hover:border-secondary transition-colors">
-                <CardContent className="p-6 space-y-3">
-                  <benefit.icon className="w-10 h-10 text-secondary" />
-                  <h3 className="text-lg font-bold text-foreground">{benefit.title}</h3>
-                  <p className="text-muted-foreground text-sm">{benefit.description}</p>
-                </CardContent>
-              </Card>
+              <div key={idx} className="space-y-3">
+                <benefit.icon className="w-8 h-8 text-secondary" />
+                <h3 className="text-xl font-bold text-foreground">{benefit.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -243,43 +222,38 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 md:py-24">
+      <section className="py-20 md:py-32 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Trusted by Nigerian businesses</h2>
-            <p className="text-lg text-muted-foreground">See what our partners say about us</p>
+          <div className="mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">Trusted by Nigerian businesses</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="space-y-16 max-w-4xl">
             {testimonials.map((testimonial, idx) => (
-              <Card key={idx} className="border-2 hover:border-secondary transition-colors">
-                <CardContent className="p-8 space-y-4">
-                  <div className="text-4xl text-secondary">"</div>
-                  <p className="text-foreground italic">{testimonial.quote}</p>
-                  <div className="pt-4 border-t">
-                    <div className="font-bold text-foreground">{testimonial.author}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                  </div>
-                </CardContent>
-              </Card>
+              <div key={idx} className="space-y-4">
+                <p className="text-xl md:text-2xl text-foreground leading-relaxed">"{testimonial.quote}"</p>
+                <div>
+                  <div className="font-bold text-foreground">{testimonial.author}</div>
+                  <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* FAQs */}
-      <section className="py-16 md:py-24 bg-muted">
+      <section className="py-20 md:py-32">
         <div className="container mx-auto px-4 max-w-3xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Frequently asked questions</h2>
-            <p className="text-lg text-muted-foreground">Everything you need to know about Proxim!</p>
+          <div className="mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">Frequently asked questions</h2>
           </div>
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, idx) => (
-              <AccordionItem key={idx} value={`item-${idx}`} className="bg-card border-2 rounded-lg px-6">
-                <AccordionTrigger className="text-left font-semibold hover:text-secondary">
+              <AccordionItem key={idx} value={`item-${idx}`} className="border-b">
+                <AccordionTrigger className="text-left font-semibold py-4 hover:no-underline">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
+                <AccordionContent className="text-muted-foreground pb-4">{faq.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
@@ -287,20 +261,22 @@ const Home = () => {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-secondary to-secondary/90">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-secondary-foreground mb-6">
-            Start your free trial today
-          </h2>
-          <p className="text-xl text-secondary-foreground/90 mb-8 max-w-2xl mx-auto">
-            Join hundreds of Nigerian businesses driving revenue with proximity marketing
-          </p>
-          <Link to="/contact">
-            <Button variant="default" size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              Get Started Now
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </Link>
+      <section className="py-20 md:py-32 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl md:text-5xl font-bold text-secondary-foreground mb-6">
+              Start your free trial today
+            </h2>
+            <p className="text-xl text-secondary-foreground/90 mb-8">
+              Join hundreds of Nigerian businesses driving revenue with proximity marketing
+            </p>
+            <Link to="/contact">
+              <Button variant="primary" size="lg">
+                Get Started Now
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
     </div>

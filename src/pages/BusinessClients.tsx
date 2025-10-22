@@ -76,11 +76,11 @@ const BusinessClients = () => {
   ];
 
   const industries = [
-    { icon: "🍽️", name: "Food & Beverage", description: "Cafés, restaurants, bakeries, food trucks" },
-    { icon: "🛍️", name: "Retail", description: "Fashion, supermarkets, electronics, markets" },
-    { icon: "🎭", name: "Entertainment", description: "Cinemas, event centres, bars, nightclubs" },
-    { icon: "💪", name: "Health & Fitness", description: "Pharmacies, gyms, spas, wellness centres" },
-    { icon: "✂️", name: "Services", description: "Salons, repair shops, petrol stations, logistics" },
+    { name: "Food & Beverage", description: "Cafés, restaurants, bakeries, food trucks" },
+    { name: "Retail", description: "Fashion, supermarkets, electronics, markets" },
+    { name: "Entertainment", description: "Cinemas, event centres, bars, nightclubs" },
+    { name: "Health & Fitness", description: "Pharmacies, gyms, spas, wellness centres" },
+    { name: "Services", description: "Salons, repair shops, petrol stations, logistics" },
   ];
 
   const faqs = [
@@ -115,26 +115,28 @@ const BusinessClients = () => {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-20 md:py-32 bg-gradient-to-br from-secondary to-secondary/80">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground mb-6">
-              Bring customers through your door with location-based offers
-            </h1>
-            <p className="text-xl text-secondary-foreground/90 max-w-3xl mx-auto mb-8">
-              Over 85% of Nigerians own mobile devices. Proxim! turns those phones into a direct line to nearby shoppers, helping you increase foot traffic and sales.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact">
-                <Button variant="default" size="lg" className="bg-primary hover:bg-primary/90">
-                  Start Free Trial
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-              <Link to="/pricing">
-                <Button variant="outline" size="lg" className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
-                  View Pricing
-                </Button>
-              </Link>
+        <section className="py-20 md:py-32 bg-secondary">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto space-y-8">
+              <h1 className="text-4xl md:text-6xl font-bold text-secondary-foreground leading-tight">
+                Bring customers through your door with location-based offers
+              </h1>
+              <p className="text-xl text-secondary-foreground/90 leading-relaxed">
+                Over 85% of Nigerians own mobile devices. Proxim! turns those phones into a direct line to nearby shoppers, helping you increase foot traffic and sales.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/contact">
+                  <Button variant="primary" size="lg" className="w-full sm:w-auto">
+                    Start Free Trial
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+                <Link to="/pricing">
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
+                    View Pricing
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -302,7 +304,6 @@ const BusinessClients = () => {
               {industries.map((industry, idx) => (
                 <Card key={idx} className="text-center hover:border-secondary transition-colors">
                   <CardContent className="p-6">
-                    <div className="text-5xl mb-3">{industry.icon}</div>
                     <h3 className="text-lg font-bold mb-2">{industry.name}</h3>
                     <p className="text-sm text-muted-foreground">{industry.description}</p>
                   </CardContent>
@@ -334,26 +335,28 @@ const BusinessClients = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-16 md:py-24 bg-gradient-to-r from-primary to-info">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-6">
-              Ready to bring more customers through your door?
-            </h2>
-            <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-              Start your first campaign today with a free trial
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact">
-                <Button variant="default" size="lg" className="bg-secondary hover:bg-secondary/90">
-                  Start Free Trial
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                  Book a Demo
-                </Button>
-              </Link>
+        <section className="py-20 md:py-32 bg-primary">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl space-y-8">
+              <h2 className="text-3xl md:text-5xl font-bold text-primary-foreground">
+                Ready to bring more customers through your door?
+              </h2>
+              <p className="text-xl text-primary-foreground/90">
+                Start your first campaign today with a free trial
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/contact">
+                  <Button size="lg" className="w-full sm:w-auto">
+                    Start Free Trial
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+                <Link to="/contact">
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                    Book a Demo
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
