@@ -232,9 +232,8 @@ const AppPartners = () => {
                   </a>
                   <a href="#benefits">
                     <Button 
-                      variant="outline"
                       size="lg" 
-                      className="w-full sm:w-auto border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                      className="w-full sm:w-auto bg-primary-foreground text-primary hover:bg-primary-foreground/90"
                     >
                       Learn More
                     </Button>

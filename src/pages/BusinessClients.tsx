@@ -132,7 +132,7 @@ const BusinessClients = () => {
                   </Button>
                 </Link>
                 <Link to="/pricing">
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
+                  <Button size="lg" className="w-full sm:w-auto bg-secondary-foreground text-secondary hover:bg-secondary-foreground/90">
                     View Pricing
                   </Button>
                 </Link>
@@ -352,7 +352,7 @@ const BusinessClients = () => {
                   </Button>
                 </Link>
                 <Link to="/contact">
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                  <Button size="lg" className="w-full sm:w-auto bg-primary-foreground text-primary hover:bg-primary-foreground/90">
                     Book a Demo
                   </Button>
                 </Link>

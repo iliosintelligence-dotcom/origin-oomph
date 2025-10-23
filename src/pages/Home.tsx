@@ -124,7 +124,7 @@ const Home = () => {
                   <Button 
                     variant="outline"
                     size="lg" 
-                    className="w-full sm:w-auto border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                    className="w-full sm:w-auto bg-primary-foreground text-primary border-primary-foreground hover:bg-primary-foreground/90"
                   >
                     See Pricing
                   </Button>

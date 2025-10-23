@@ -274,7 +274,7 @@ const Pricing = () => {
                 </Button>
               </Link>
               <Link to="/contact">
-                <Button variant="outline" size="lg" className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
+                <Button size="lg" className="bg-secondary-foreground text-secondary hover:bg-secondary-foreground/90">
                   Book a Demo
                 </Button>
               </Link>
