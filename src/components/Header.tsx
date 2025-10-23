@@ -29,7 +29,7 @@ const Header = () => {
             <img 
               src={logo} 
               alt="Proxim!" 
-              className="h-10 md:h-12 w-auto transition-opacity group-hover:opacity-80"
+              className="h-14 md:h-16 w-auto transition-opacity group-hover:opacity-80"
             />
           </Link>
 
