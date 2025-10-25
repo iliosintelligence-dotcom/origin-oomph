@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { MapPin, TrendingUp, BarChart3, Shield, Users, Zap, CheckCircle2, ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-creative-proximity.jpg";
+import restaurantOwnerImage from "@/assets/hero-restaurant-owner.png";
 import illustrationGeofencing from "@/assets/illustration-geofencing.png";
 import illustrationRevenueGrowth from "@/assets/illustration-revenue-growth.png";
 import illustrationAnalytics from "@/assets/illustration-analytics.png";
@@ -51,7 +52,7 @@ const Home = () => {
 
   const testimonials = [
     {
-      quote: "Proxim! helped us bring in 27% more customers during lunch hours. The notifications felt personal and respectful, and our sales jumped within the first week.",
+      quote: "Proxim! helped me bring in 27% more customers during lunch hours. The notifications felt personal and respectful, and my sales jumped within the first week.",
       author: "Lola",
       role: "Owner, Lagos Café",
     },
@@ -61,7 +62,7 @@ const Home = () => {
       role: "Product Manager, Ride-Sharing App",
     },
     {
-      quote: "A Lagos lifestyle app integrated Proxim! and saw a 14% increase in daily active sessions. Monthly ad revenue doubled within three months.",
+      quote: "Our Lagos lifestyle app integrated Proxim! and I saw a 14% increase in daily active sessions. Our monthly ad revenue doubled within three months.",
       author: "Ibrahim Yusuf",
       role: "Marketing Director, Lifestyle App",
     },
@@ -133,8 +134,8 @@ const Home = () => {
             </div>
             <div>
               <img
-                src={heroImage}
-                alt="Proximity marketing visualization"
+                src={restaurantOwnerImage}
+                alt="Nigerian restaurant owner welcoming customers with proximity marketing"
                 className="rounded-lg w-full h-auto"
               />
             </div>

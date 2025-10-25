@@ -27,10 +27,10 @@ const Contact = () => {
               <div className="mb-12 p-6 bg-muted rounded-lg">
                 <h2 className="text-2xl font-bold text-foreground mb-4">Lagos Headquarters</h2>
                 <div className="space-y-2 text-muted-foreground">
-                  <p>Block C, 3rd Floor, Admiralty Way</p>
-                  <p>Lekki Phase I, Lagos, Nigeria</p>
-                  <p className="mt-4"><strong>Phone:</strong> +234 816 000 0000</p>
-                  <p><strong>Email:</strong> info@proxim.ng</p>
+                  <p>24b, Bashorun Okusanya Street</p>
+                  <p>Off Admiralty Way, Lekki Phase 1, Lagos</p>
+                  <p className="mt-4"><strong>Phone:</strong> 07067750583</p>
+                  <p><strong>Email:</strong> ilios.proxim@gmail.com</p>
                   <p className="mt-4 text-sm">
                     <strong>Support Hours:</strong> Monday to Friday, 9:00 AM – 6:00 PM (West Africa Time)
                   </p>

@@ -16,8 +16,8 @@ const About = () => {
       bio: "Dr. David Joshua is a visionary entrepreneur with a proven track record of building innovative technology solutions across multiple sectors. As founder of Proxim, he brings deep expertise from founding successful ventures in healthcare technology, where he developed solutions that improved patient outcomes and operational efficiency. His diverse experience spans legal technology and research, giving him a unique perspective on building compliant, scalable platforms.",
       quote: "Every business owner I've met has the same frustration: 'People walk past my shop every day, but they don't know what I'm offering right now.' Proxim solves that. We're not just building marketing technology—we're helping local businesses thrive and creating meaningful revenue for app partners.",
       expertise: ["Business Strategy & Vision", "Market Development", "Product Innovation", "Partnership Development", "Healthcare Technology"],
-      email: "david@proxim.ng",
-      linkedin: "#"
+      email: "jjoshuadavidd@gmail.com",
+      linkedin: "https://linkedin.com/in/dr-joshua-david"
     },
     {
       name: "Oduma Daniel",
@@ -26,8 +26,8 @@ const About = () => {
       bio: "Oduma Daniel is a versatile and highly accomplished software developer with over seven years of expertise building elegant, high-performing software solutions. As Proxim's CTO, he brings a proven track record of delivering impactful projects for organizations of all sizes across diverse sectors including Real Estate, Fashion, Banking, Government, and Retail. His technical excellence and architectural vision ensure Proxim's platform is robust, scalable, and built to handle Nigeria's unique technological landscape.",
       quote: "Great technology should be invisible—it should just work. At Proxim, we're building infrastructure that handles the complexity behind the scenes so app partners and businesses can focus on what matters: connecting and growing.",
       expertise: ["Full-Stack Development", "System Architecture", "API Development", "Cloud Infrastructure", "Payment Integration"],
-      email: "daniel@proxim.ng",
-      linkedin: "#"
+      email: "zongthedeveloper@gmail.com",
+      linkedin: "https://linkedin.com/in/oduma-daniel"
     },
   ];
 

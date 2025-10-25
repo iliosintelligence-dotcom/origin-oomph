@@ -80,15 +80,15 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-secondary-foreground/80">
               <li className="flex items-start space-x-2">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>Proxim HQ, Lekki Phase 1, Lagos, Nigeria</span>
+                <span>24b, Bashorun Okusanya Street, Off Admiralty Way, Lekki Phase 1, Lagos</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>+234 701 234 5678</span>
+                <span>07067750583</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                <span>support@proxim.ng</span>
+                <span>ilios.proxim@gmail.com</span>
               </li>
               <li className="text-xs">
                 Support: Mon–Fri 09:00–18:00 WAT
