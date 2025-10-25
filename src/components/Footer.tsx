@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/logo.png";
+import iliosLogo from "@/assets/ilios-logo.png";
 
 const Footer = () => {
   return (
@@ -116,7 +117,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-secondary-foreground/20">
+        <div className="pt-8 border-t border-secondary-foreground/20 space-y-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-secondary-foreground/60">
               © {new Date().getFullYear()} Proxim! All rights reserved.
@@ -132,6 +133,17 @@ const Footer = () => {
                 NDPR Compliance
               </Link>
             </div>
+          </div>
+          
+          {/* ILIOS Technologies Attribution */}
+          <div className="flex justify-center items-center gap-2 text-sm text-secondary-foreground/60">
+            <span>Proxim is by</span>
+            <img 
+              src={iliosLogo} 
+              alt="ILIOS Technologies" 
+              className="h-5 w-auto"
+            />
+            <span>Technologies</span>
           </div>
         </div>
       </div>
