@@ -136,14 +136,13 @@ const Footer = () => {
           </div>
           
           {/* ILIOS Technologies Attribution */}
-          <div className="flex justify-center items-center gap-2 text-sm text-secondary-foreground/60">
+          <div className="flex justify-center items-center gap-2 text-sm text-secondary-foreground/60 pt-4 border-t border-secondary-foreground/10">
             <span>Proxim is by</span>
             <img 
               src={iliosLogo} 
               alt="ILIOS Technologies" 
-              className="h-5 w-auto"
+              className="h-6 w-auto brightness-0 invert"
             />
-            <span>Technologies</span>
           </div>
         </div>
       </div>
