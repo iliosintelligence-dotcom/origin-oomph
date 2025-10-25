@@ -134,7 +134,7 @@ const Home = () => {
             </div>
             <div>
               <img
-                src={restaurantOwnerImage}
+                src={heroImage}
                 alt="Nigerian restaurant owner welcoming customers with proximity marketing"
                 className="rounded-lg w-full h-auto"
               />
