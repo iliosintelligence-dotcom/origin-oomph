@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
 import { MapPin, TrendingUp, Target, Clock, CheckCircle2, BarChart3, ArrowRight } from "lucide-react";
+import restaurantOwnerImage from "@/assets/hero-restaurant-owner.png";
 
 const BusinessClients = () => {
   const pricingPlans = [
@@ -117,25 +118,34 @@ const BusinessClients = () => {
         {/* Hero Section */}
         <section className="py-20 md:py-32 bg-secondary">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto space-y-8">
-              <h1 className="text-4xl md:text-6xl font-bold text-secondary-foreground leading-tight">
-                Bring customers through your door with location-based offers
-              </h1>
-              <p className="text-xl text-secondary-foreground/90 leading-relaxed">
-                Over 85% of Nigerians own mobile devices. Proxim! turns those phones into a direct line to nearby shoppers, helping you increase foot traffic and sales.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/contact">
-                  <Button variant="primary" size="lg" className="w-full sm:w-auto">
-                    Start Free Trial
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </Link>
-                <Link to="/pricing">
-                  <Button size="lg" className="w-full sm:w-auto bg-secondary-foreground text-secondary hover:bg-secondary-foreground/90">
-                    View Pricing
-                  </Button>
-                </Link>
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-8">
+                <h1 className="text-4xl md:text-6xl font-bold text-secondary-foreground leading-tight">
+                  Bring customers through your door with location-based offers
+                </h1>
+                <p className="text-xl text-secondary-foreground/90 leading-relaxed">
+                  Over 85% of Nigerians own mobile devices. Proxim! turns those phones into a direct line to nearby shoppers, helping you increase foot traffic and sales.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link to="/contact">
+                    <Button variant="primary" size="lg" className="w-full sm:w-auto">
+                      Start Free Trial
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </Link>
+                  <Link to="/pricing">
+                    <Button size="lg" className="w-full sm:w-auto bg-secondary-foreground text-secondary hover:bg-secondary-foreground/90">
+                      View Pricing
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+              <div>
+                <img
+                  src={restaurantOwnerImage}
+                  alt="Nigerian restaurant owner welcoming customers with proximity marketing"
+                  className="rounded-lg w-full h-auto"
+                />
               </div>
             </div>
           </div>
