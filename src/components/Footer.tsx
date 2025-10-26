@@ -140,7 +140,7 @@ const Footer = () => {
             <span>Proxim is by</span>
             <img 
               src={iliosLogo} 
-              alt="ILIOS Technologies" 
+              alt="ILIOS Digital" 
               className="h-6 w-auto brightness-0 invert"
             />
           </div>
