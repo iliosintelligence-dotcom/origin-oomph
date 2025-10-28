@@ -4,11 +4,40 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import { Link } from "react-router-dom";
-import { MapPin, TrendingUp, Target, Clock, CheckCircle2, BarChart3, ArrowRight } from "lucide-react";
+import { MapPin, TrendingUp, Target, Clock, CheckCircle2, BarChart3, ArrowRight, Sparkles, Upload, Image } from "lucide-react";
 import restaurantOwnerImage from "@/assets/hero-restaurant-owner.png";
+import { useState } from "react";
 
 const BusinessClients = () => {
+  const [campaignName, setCampaignName] = useState("");
+  const [businessType, setBusinessType] = useState("");
+  const [offerDetails, setOfferDetails] = useState("");
+  const [targetAudience, setTargetAudience] = useState("");
+  const [generatedAd, setGeneratedAd] = useState("");
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+
+  const handleGenerateAd = async () => {
+    setIsGenerating(true);
+    // Simulate AI generation
+    setTimeout(() => {
+      const aiGeneratedText = `🎯 Exclusive Offer at ${campaignName || 'Your Business'}!\n\n${offerDetails || 'Special promotion available now'}\n\nPerfect for ${targetAudience || 'everyone'}. Visit us today and experience the difference!\n\n✨ Limited time only - Don't miss out!`;
+      setGeneratedAd(aiGeneratedText);
+      setIsGenerating(false);
+    }, 2000);
+  };
+
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      setUploadedFiles(Array.from(e.target.files));
+    }
+  };
+
   const pricingPlans = [
     {
       name: "Starter",
@@ -219,6 +248,159 @@ const BusinessClients = () => {
                 </CardContent>
               </Card>
             </div>
+          </div>
+        </section>
+
+        {/* Campaign Creator */}
+        <section className="py-16 md:py-24">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Create Your Campaign with AI
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Design compelling ads in minutes with AI assistance
+              </p>
+            </div>
+            
+            <Card className="max-w-4xl mx-auto">
+              <CardContent className="p-6">
+                <Tabs defaultValue="details" className="w-full">
+                  <TabsList className="grid w-full grid-cols-3">
+                    <TabsTrigger value="details">Campaign Details</TabsTrigger>
+                    <TabsTrigger value="ai-ad">AI Ad Creator</TabsTrigger>
+                    <TabsTrigger value="upload">Upload Media</TabsTrigger>
+                  </TabsList>
+
+                  <TabsContent value="details" className="space-y-4 mt-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="campaign-name">Campaign Name</Label>
+                      <Input
+                        id="campaign-name"
+                        placeholder="e.g., Weekend Special Promotion"
+                        value={campaignName}
+                        onChange={(e) => setCampaignName(e.target.value)}
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="business-type">Business Type</Label>
+                      <Input
+                        id="business-type"
+                        placeholder="e.g., Restaurant, Retail Store, Salon"
+                        value={businessType}
+                        onChange={(e) => setBusinessType(e.target.value)}
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="offer">Offer Details</Label>
+                      <Textarea
+                        id="offer"
+                        placeholder="Describe your special offer or promotion"
+                        value={offerDetails}
+                        onChange={(e) => setOfferDetails(e.target.value)}
+                        rows={4}
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="audience">Target Audience</Label>
+                      <Input
+                        id="audience"
+                        placeholder="e.g., Young professionals, Families, Students"
+                        value={targetAudience}
+                        onChange={(e) => setTargetAudience(e.target.value)}
+                      />
+                    </div>
+                  </TabsContent>
+
+                  <TabsContent value="ai-ad" className="space-y-4 mt-6">
+                    <div className="space-y-4">
+                      <div className="p-4 bg-muted rounded-lg">
+                        <div className="flex items-center gap-2 mb-3">
+                          <Sparkles className="w-5 h-5 text-secondary" />
+                          <h3 className="font-semibold">AI-Generated Ad Copy</h3>
+                        </div>
+                        <p className="text-sm text-muted-foreground mb-4">
+                          Fill in the campaign details first, then let our AI create compelling ad copy for you.
+                        </p>
+                        <Button 
+                          onClick={handleGenerateAd} 
+                          disabled={!campaignName || !offerDetails || isGenerating}
+                          className="w-full"
+                        >
+                          {isGenerating ? (
+                            <>
+                              <Sparkles className="mr-2 h-4 w-4 animate-spin" />
+                              Generating...
+                            </>
+                          ) : (
+                            <>
+                              <Sparkles className="mr-2 h-4 w-4" />
+                              Generate Ad Copy
+                            </>
+                          )}
+                        </Button>
+                      </div>
+                      
+                      {generatedAd && (
+                        <div className="space-y-2">
+                          <Label htmlFor="generated-ad">Generated Ad (Edit as needed)</Label>
+                          <Textarea
+                            id="generated-ad"
+                            value={generatedAd}
+                            onChange={(e) => setGeneratedAd(e.target.value)}
+                            rows={8}
+                            className="font-mono text-sm"
+                          />
+                        </div>
+                      )}
+                    </div>
+                  </TabsContent>
+
+                  <TabsContent value="upload" className="space-y-4 mt-6">
+                    <div className="space-y-4">
+                      <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center">
+                        <Upload className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
+                        <h3 className="font-semibold mb-2">Upload Campaign Media</h3>
+                        <p className="text-sm text-muted-foreground mb-4">
+                          Upload images, videos, or graphics for your campaign
+                        </p>
+                        <Input
+                          type="file"
+                          multiple
+                          accept="image/*,video/*"
+                          onChange={handleFileUpload}
+                          className="max-w-xs mx-auto cursor-pointer"
+                        />
+                      </div>
+                      
+                      {uploadedFiles.length > 0 && (
+                        <div className="space-y-2">
+                          <Label>Uploaded Files ({uploadedFiles.length})</Label>
+                          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            {uploadedFiles.map((file, idx) => (
+                              <div key={idx} className="border rounded-lg p-3 text-center">
+                                <Image className="w-8 h-8 mx-auto mb-2 text-muted-foreground" />
+                                <p className="text-xs truncate">{file.name}</p>
+                                <p className="text-xs text-muted-foreground">
+                                  {(file.size / 1024).toFixed(1)} KB
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </TabsContent>
+                </Tabs>
+
+                <div className="mt-6 pt-6 border-t">
+                  <Button className="w-full" size="lg">
+                    <Target className="mr-2 h-5 w-5" />
+                    Launch Campaign
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
