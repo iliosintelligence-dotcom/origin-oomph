@@ -13,7 +13,13 @@ import illustrationDashboard from "@/assets/illustration-dashboard.png";
 import illustrationCustomerEngagement from "@/assets/illustration-customer-engagement.png";
 
 const Home = () => {
-  const valueProps = [
+  const valueProps: Array<{
+    icon: any;
+    title: string;
+    subtitle?: string;
+    description: string;
+    image: string;
+  }> = [
     {
       icon: MapPin,
       title: "Precise Location Targeting",
@@ -23,7 +29,8 @@ const Home = () => {
     {
       icon: TrendingUp,
       title: "Immediate Revenue Impact",
-      description: "Drive foot traffic and in-store conversions with hyper-relevant offers delivered at the perfect moment. Our clients see an average 35% increase in walk-ins within the first month.",
+      subtitle: "Your Message, Delivered Inside Their Apps.",
+      description: "Proxim drives foot traffic and in-store conversions by serving hyper-relevant offers directly to geofenced users via the popular mobile apps on their phones. Our clients see an average 35% increase in walk-ins within the first month.",
       image: illustrationRevenueGrowth,
     },
     {
@@ -47,8 +54,8 @@ const Home = () => {
     },
     { 
       step: 3, 
-      title: "Ad is Delivered Instantly", 
-      description: "Your targeted offer appears directly within the apps they're already using—maps, ride-hailing, delivery services. High visibility, zero banner blindness."
+      title: "Ad is Delivered In-App", 
+      description: "Your targeted offer appears directly within the apps they are using—maps, ride-hailing, delivery services—guaranteeing high visibility and zero banner blindness."
     },
   ];
 
@@ -190,9 +197,9 @@ const Home = () => {
       </section>
 
       {/* Value Proposition */}
-      <section className="py-28 md:py-40 bg-gradient-to-b from-background to-muted">
+      <section className="py-32 md:py-48 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-24">
+          <div className="text-center mb-32">
             <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
               Eliminate Wasted Ad Spend.<br />Maximize Every Naira.
             </h2>
@@ -200,24 +207,22 @@ const Home = () => {
               Traditional advertising wastes 60%+ of your budget on people who will never visit your store. Proxim delivers precision targeting that guarantees optimal reach.
             </p>
           </div>
-          <div className="space-y-32">
+          <div className="space-y-48">
             {valueProps.map((prop, idx) => (
-              <div key={idx} className={`grid lg:grid-cols-2 gap-16 items-center`}>
+              <div key={idx} className={`grid lg:grid-cols-2 gap-20 items-start`}>
                 <div className={idx % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="relative">
-                    <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 to-accent/10 rounded-3xl blur-2xl"></div>
-                    <img 
-                      src={prop.image} 
-                      alt={prop.title} 
-                      className="w-full h-auto rounded-2xl shadow-xl relative z-10 border border-border"
-                    />
-                  </div>
+                  <img 
+                    src={prop.image} 
+                    alt={prop.title} 
+                    className="w-full h-auto"
+                  />
                 </div>
                 <div className={`space-y-6 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 text-primary mb-4">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-primary/10 text-primary">
                     <prop.icon className="w-8 h-8" />
                   </div>
                   <h3 className="text-3xl md:text-5xl font-bold text-foreground leading-tight">{prop.title}</h3>
+                  {prop.subtitle && <p className="text-2xl font-semibold text-primary">{prop.subtitle}</p>}
                   <p className="text-xl text-muted-foreground leading-relaxed">{prop.description}</p>
                   <div className="pt-4">
                     <Link to="/business-clients">
@@ -235,24 +240,23 @@ const Home = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-28 md:py-40 bg-secondary text-secondary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_30%_50%,rgba(255,107,53,0.3),transparent)]"></div>
-        <div className="container mx-auto px-4 max-w-6xl relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">Simple. Fast. Effective.</h2>
-            <p className="text-xl md:text-2xl text-secondary-foreground/80 max-w-3xl mx-auto">
+      <section className="py-32 md:py-48 bg-muted">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-24">
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">Simple. Fast. Effective.</h2>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
               Launch your first hyper-local campaign in three simple steps.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-12">
             {howItWorks.map((step, idx) => (
               <div key={idx} className="relative">
-                <div className="flex flex-col items-start space-y-6 bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary/50 transition-all duration-300 h-full">
-                  <div className="flex items-center justify-center w-16 h-16 rounded-2xl bg-primary text-primary-foreground text-2xl font-bold shadow-lg">
+                <div className="flex flex-col items-start space-y-6 h-full">
+                  <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-primary text-primary-foreground text-2xl font-bold">
                     {step.step}
                   </div>
-                  <h3 className="text-2xl font-bold leading-tight">{step.title}</h3>
-                  <p className="text-secondary-foreground/80 text-lg leading-relaxed">{step.description}</p>
+                  <h3 className="text-2xl font-bold text-foreground leading-tight">{step.title}</h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed">{step.description}</p>
                 </div>
                 {idx < howItWorks.length - 1 && (
                   <div className="hidden md:block absolute top-12 -right-6 text-primary">
@@ -266,7 +270,7 @@ const Home = () => {
             <Link to="/contact">
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-xl text-lg px-10 py-6"
+                className="text-lg px-10 py-6"
               >
                 Start Your Free Pilot
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -277,9 +281,9 @@ const Home = () => {
       </section>
 
       {/* Benefits */}
-      <section className="py-28 md:py-40">
+      <section className="py-32 md:py-48 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-20">
+          <div className="text-center mb-24">
             <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
               Why Proxim Outperforms<br />Traditional Advertising
             </h2>
@@ -291,7 +295,7 @@ const Home = () => {
             {benefits.map((benefit, idx) => (
               <div 
                 key={idx} 
-                className="group bg-card border border-border rounded-2xl p-8 hover:shadow-2xl hover:border-primary/50 transition-all duration-300"
+                className="group"
               >
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   <benefit.icon className="w-7 h-7" />
@@ -305,9 +309,9 @@ const Home = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-24 bg-gradient-to-r from-muted via-muted/50 to-muted">
+      <section className="py-32 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-16 text-center">
+          <div className="grid md:grid-cols-3 gap-20 text-center">
             {stats.map((stat, idx) => (
               <div key={idx} className="space-y-4">
                 <div className="text-6xl md:text-7xl font-bold text-primary tracking-tight">{stat.value}</div>
@@ -319,26 +323,26 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-28 md:py-40">
+      <section className="py-32 md:py-48 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-20">
+          <div className="text-center mb-24">
             <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">Real Results from Real Businesses</h2>
             <p className="text-xl text-muted-foreground">
               Join hundreds of Nigerian businesses already driving revenue with Proxim
             </p>
           </div>
-          <div className="grid lg:grid-cols-3 gap-10">
+          <div className="grid lg:grid-cols-3 gap-12">
             {testimonials.map((testimonial, idx) => (
               <div 
                 key={idx} 
-                className="bg-card border border-border rounded-2xl p-10 hover:shadow-xl transition-shadow duration-300"
+                className="space-y-6"
               >
-                <div className="mb-6">
+                <div>
                   <svg className="w-12 h-12 text-primary/30" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
                 </div>
-                <p className="text-lg text-foreground leading-relaxed mb-8 italic">"{testimonial.quote}"</p>
+                <p className="text-lg text-foreground leading-relaxed italic">"{testimonial.quote}"</p>
                 <div className="border-t border-border pt-6">
                   <div className="font-bold text-foreground text-lg">{testimonial.author}</div>
                   <div className="text-muted-foreground">{testimonial.role}</div>
@@ -350,18 +354,18 @@ const Home = () => {
       </section>
 
       {/* FAQs */}
-      <section className="py-20 md:py-32">
+      <section className="py-32 md:py-48 bg-muted">
         <div className="container mx-auto px-4 max-w-3xl">
-          <div className="mb-16">
+          <div className="mb-20">
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">Frequently asked questions</h2>
           </div>
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, idx) => (
-              <AccordionItem key={idx} value={`item-${idx}`} className="border-b">
-                <AccordionTrigger className="text-left font-semibold py-4 hover:no-underline">
+              <AccordionItem key={idx} value={`item-${idx}`} className="border-b border-border">
+                <AccordionTrigger className="text-left font-semibold py-6 hover:no-underline text-lg">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-4">{faq.a}</AccordionContent>
+                <AccordionContent className="text-muted-foreground text-base pb-6">{faq.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
