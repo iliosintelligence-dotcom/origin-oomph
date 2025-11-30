@@ -150,10 +150,10 @@ const BusinessClients = () => {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
                 <h1 className="text-4xl md:text-6xl font-bold text-secondary-foreground leading-tight">
-                  Bring customers through your door with location-based offers
+                  Bring Customers Through Your Door with Hyper-Precise Offers
                 </h1>
                 <p className="text-xl text-secondary-foreground/90 leading-relaxed">
-                  Over 85% of Nigerians own mobile devices. Proxim! turns those phones into a direct line to nearby shoppers, helping you increase foot traffic and sales.
+                  Over 85% of Nigerians own mobile devices. Proxim turns those phones into a direct line to nearby shoppers, helping you increase foot traffic and sales.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/contact">
@@ -202,54 +202,6 @@ const BusinessClients = () => {
           </div>
         </section>
 
-        {/* How It Works */}
-        <section className="py-16 md:py-24 bg-muted">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                How Proxim! Works for Your Business
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-              <Card>
-                <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 rounded-full bg-secondary/10 text-secondary flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                    1
-                  </div>
-                  <h3 className="text-lg font-bold mb-2">Sign Up</h3>
-                  <p className="text-sm text-muted-foreground">Create your account and set up your business profile in minutes</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 rounded-full bg-secondary/10 text-secondary flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                    2
-                  </div>
-                  <h3 className="text-lg font-bold mb-2">Create Campaign</h3>
-                  <p className="text-sm text-muted-foreground">Set your radius, times, offer and call-to-action through our dashboard</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 rounded-full bg-secondary/10 text-secondary flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                    3
-                  </div>
-                  <h3 className="text-lg font-bold mb-2">Reach Customers</h3>
-                  <p className="text-sm text-muted-foreground">Messages delivered when nearby users enter your geofenced area</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 rounded-full bg-secondary/10 text-secondary flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                    4
-                  </div>
-                  <h3 className="text-lg font-bold mb-2">Track Results</h3>
-                  <p className="text-sm text-muted-foreground">Monitor views, redemptions and optimize your campaigns for better ROI</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
 
         {/* Campaign Creator */}
         <section className="py-16 md:py-24">
