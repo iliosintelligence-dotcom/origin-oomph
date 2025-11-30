@@ -8,50 +8,51 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Base */
+    /* Base - Clean white with subtle warmth */
     --background: 0 0% 100%;
-    --foreground: 0 0% 5%;
+    --foreground: 220 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 5%;
+    --card-foreground: 220 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 5%;
+    --popover-foreground: 220 15% 15%;
 
-    /* Primary - Proxim Orange (#FF6B35) */
+    /* Primary - Vibrant Proxim Orange */
     --primary: 17 100% 60%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Deep Charcoal (#1A1A1A) */
-    --secondary: 0 0% 10%;
+    /* Secondary - Modern Slate */
+    --secondary: 220 20% 25%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 35%;
+    --muted: 220 15% 97%;
+    --muted-foreground: 220 10% 45%;
 
-    /* Accent - Darker Orange (#E85D2E) */
-    --accent: 14 82% 54%;
+    /* Accent - Electric Coral */
+    --accent: 14 95% 58%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 88%;
-    --input: 0 0% 88%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
     --ring: 17 100% 60%;
 
-    /* Warning - Amber (#FFA726) */
+    /* Success - Fresh Green */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning - Amber */
     --warning: 32 100% 58%;
     --warning-foreground: 0 0% 10%;
 
-    /* Info - Navy Blue (#0D3B66) */
+    /* Info - Deep Blue */
     --info: 207 79% 23%;
     --info-foreground: 0 0% 100%;
 
-    /* Soft Gray */
-    --soft-gray: 0 0% 96%;
-
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
 
     --sidebar-background: 0 0% 98%;
@@ -65,33 +66,36 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 0 0% 8%;
+    --background: 220 20% 10%;
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 12%;
+    --card: 220 18% 14%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 12%;
+    --popover: 220 18% 14%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 17 100% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 15%;
+    --secondary: 220 15% 20%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 65%;
 
-    --accent: 14 82% 54%;
+    --accent: 14 95% 58%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
     --ring: 17 100% 60%;
+    
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
     
     --warning: 32 100% 58%;
     --warning-foreground: 0 0% 10%;
