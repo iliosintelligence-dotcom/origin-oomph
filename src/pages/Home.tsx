@@ -197,36 +197,41 @@ const Home = () => {
       </section>
 
       {/* Value Proposition */}
-      <section className="py-32 md:py-48 bg-background">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-32">
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+      <section className="py-24 md:py-32 bg-background">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-20">
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <span className="w-8 h-px bg-foreground/30"></span>
+              <span className="text-sm font-medium text-foreground/60 tracking-wide uppercase">Why Proxim</span>
+              <span className="w-8 h-px bg-foreground/30"></span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
               Eliminate Wasted Ad Spend.<br />Maximize Every Naira.
             </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Traditional advertising wastes 60%+ of your budget on people who will never visit your store. Proxim delivers precision targeting that guarantees optimal reach.
             </p>
           </div>
-          <div className="space-y-48">
+          <div className="space-y-24">
             {valueProps.map((prop, idx) => (
-              <div key={idx} className={`grid lg:grid-cols-2 gap-20 items-start`}>
+              <div key={idx} className={`grid lg:grid-cols-2 gap-16 items-center`}>
                 <div className={idx % 2 === 1 ? 'lg:order-2' : ''}>
                   <img 
                     src={prop.image} 
                     alt={prop.title} 
-                    className="w-full h-auto"
+                    className="w-full h-auto rounded-lg"
                   />
                 </div>
-                <div className={`space-y-6 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-primary/10 text-primary">
-                    <prop.icon className="w-8 h-8" />
+                <div className={`space-y-5 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-foreground/5 text-foreground">
+                    <prop.icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-3xl md:text-5xl font-bold text-foreground leading-tight">{prop.title}</h3>
-                  {prop.subtitle && <p className="text-2xl font-semibold text-primary">{prop.subtitle}</p>}
-                  <p className="text-xl text-muted-foreground leading-relaxed">{prop.description}</p>
-                  <div className="pt-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">{prop.title}</h3>
+                  {prop.subtitle && <p className="text-lg font-medium text-foreground/70">{prop.subtitle}</p>}
+                  <p className="text-muted-foreground leading-relaxed">{prop.description}</p>
+                  <div className="pt-2">
                     <Link to="/business-clients">
-                      <Button variant="outline" size="lg" className="group">
+                      <Button variant="outline" size="default" className="group border-foreground/20 hover:bg-foreground/5">
                         Learn More
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Button>
@@ -240,40 +245,40 @@ const Home = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-32 md:py-48 bg-muted">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-24">
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">Simple. Fast. Effective.</h2>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+      <section className="py-24 md:py-32 bg-[hsl(30,20%,96%)]">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <span className="w-8 h-px bg-foreground/30"></span>
+              <span className="text-sm font-medium text-foreground/60 tracking-wide uppercase">How It Works</span>
+              <span className="w-8 h-px bg-foreground/30"></span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">Simple. Fast. Effective.</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Launch your first hyper-local campaign in three simple steps.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-3 gap-8">
             {howItWorks.map((step, idx) => (
-              <div key={idx} className="relative">
-                <div className="flex flex-col items-start space-y-6 h-full">
-                  <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-primary text-primary-foreground text-2xl font-bold">
+              <div key={idx} className="relative text-center">
+                <div className="flex flex-col items-center space-y-5">
+                  <div className="flex items-center justify-center w-14 h-14 rounded-full bg-foreground text-background text-xl font-bold">
                     {step.step}
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground leading-tight">{step.title}</h3>
-                  <p className="text-muted-foreground text-lg leading-relaxed">{step.description}</p>
+                  <h3 className="text-xl font-bold text-foreground leading-tight">{step.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{step.description}</p>
                 </div>
-                {idx < howItWorks.length - 1 && (
-                  <div className="hidden md:block absolute top-12 -right-6 text-primary">
-                    <ArrowRight className="w-8 h-8" />
-                  </div>
-                )}
               </div>
             ))}
           </div>
-          <div className="text-center mt-16">
+          <div className="text-center mt-12">
             <Link to="/contact">
               <Button 
                 size="lg" 
-                className="text-lg px-10 py-6"
+                className="bg-foreground hover:bg-foreground/90 text-background px-8 py-6"
               >
                 Start Your Free Pilot
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </Link>
           </div>
@@ -281,27 +286,32 @@ const Home = () => {
       </section>
 
       {/* Benefits */}
-      <section className="py-32 md:py-48 bg-background">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-24">
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+      <section className="py-24 md:py-32 bg-background">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <span className="w-8 h-px bg-foreground/30"></span>
+              <span className="text-sm font-medium text-foreground/60 tracking-wide uppercase">Benefits</span>
+              <span className="w-8 h-px bg-foreground/30"></span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
               Why Proxim Outperforms<br />Traditional Advertising
             </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Every feature is engineered for one goal: Maximum ROI with zero wasted spend.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {benefits.map((benefit, idx) => (
               <div 
                 key={idx} 
                 className="group"
               >
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  <benefit.icon className="w-7 h-7" />
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-foreground/5 text-foreground mb-5 group-hover:bg-foreground group-hover:text-background transition-colors">
+                  <benefit.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight">{benefit.title}</h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">{benefit.description}</p>
+                <h3 className="text-xl font-bold text-foreground mb-3 leading-tight">{benefit.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -309,13 +319,13 @@ const Home = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-32 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-20 text-center">
+      <section className="py-20 bg-[hsl(30,20%,96%)]">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="grid md:grid-cols-3 gap-12 text-center">
             {stats.map((stat, idx) => (
-              <div key={idx} className="space-y-4">
-                <div className="text-6xl md:text-7xl font-bold text-foreground tracking-tight">{stat.value}</div>
-                <div className="text-xl text-muted-foreground font-medium">{stat.label}</div>
+              <div key={idx} className="space-y-2">
+                <div className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">{stat.value}</div>
+                <div className="text-muted-foreground font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -323,29 +333,29 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-32 md:py-48 bg-background">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-24">
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">Real Results from Real Businesses</h2>
-            <p className="text-xl text-muted-foreground">
+      <section className="py-24 md:py-32 bg-background">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <span className="w-8 h-px bg-foreground/30"></span>
+              <span className="text-sm font-medium text-foreground/60 tracking-wide uppercase">Testimonials</span>
+              <span className="w-8 h-px bg-foreground/30"></span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">Real Results from Real Businesses</h2>
+            <p className="text-lg text-muted-foreground">
               Join hundreds of Nigerian businesses already driving revenue with Proxim
             </p>
           </div>
-          <div className="grid lg:grid-cols-3 gap-12">
+          <div className="grid lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, idx) => (
               <div 
                 key={idx} 
-                className="space-y-6"
+                className="bg-[hsl(30,20%,96%)] rounded-lg p-8 space-y-6"
               >
-                <div>
-                  <svg className="w-12 h-12 text-primary/30" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
-                </div>
-                <p className="text-lg text-foreground leading-relaxed italic">"{testimonial.quote}"</p>
-                <div className="border-t border-border pt-6">
-                  <div className="font-bold text-foreground text-lg">{testimonial.author}</div>
-                  <div className="text-muted-foreground">{testimonial.role}</div>
+                <p className="text-foreground leading-relaxed">"{testimonial.quote}"</p>
+                <div className="pt-4 border-t border-foreground/10">
+                  <div className="font-bold text-foreground">{testimonial.author}</div>
+                  <div className="text-muted-foreground text-sm">{testimonial.role}</div>
                 </div>
               </div>
             ))}
@@ -354,18 +364,23 @@ const Home = () => {
       </section>
 
       {/* FAQs */}
-      <section className="py-32 md:py-48 bg-muted">
+      <section className="py-24 md:py-32 bg-[hsl(30,20%,96%)]">
         <div className="container mx-auto px-4 max-w-3xl">
-          <div className="mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">Frequently asked questions</h2>
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <span className="w-8 h-px bg-foreground/30"></span>
+              <span className="text-sm font-medium text-foreground/60 tracking-wide uppercase">FAQ</span>
+              <span className="w-8 h-px bg-foreground/30"></span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Frequently asked questions</h2>
           </div>
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, idx) => (
-              <AccordionItem key={idx} value={`item-${idx}`} className="border-b border-border">
-                <AccordionTrigger className="text-left font-semibold py-6 hover:no-underline text-lg">
+              <AccordionItem key={idx} value={`item-${idx}`} className="border border-foreground/10 rounded-lg bg-background px-6">
+                <AccordionTrigger className="text-left font-semibold py-5 hover:no-underline">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-base pb-6">{faq.a}</AccordionContent>
+                <AccordionContent className="text-muted-foreground pb-5">{faq.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
@@ -373,30 +388,30 @@ const Home = () => {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-28 md:py-40 bg-secondary text-secondary-foreground relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
+      <section className="py-24 md:py-32 bg-foreground text-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
               Ready to Stop Wasting Ad Spend?
             </h2>
-            <p className="text-xl md:text-2xl mb-12 text-secondary-foreground/80 leading-relaxed">
+            <p className="text-lg md:text-xl mb-10 text-background/70 leading-relaxed">
               Launch your first hyper-local campaign and see measurable results within 24 hours. No setup fees. No long-term contracts.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact">
                 <Button 
                   size="lg" 
-                  className="w-full sm:w-auto bg-white hover:bg-white/90 text-secondary text-base px-10 py-7"
+                  className="w-full sm:w-auto bg-background hover:bg-background/90 text-foreground px-8 py-6"
                 >
                   Start Your Free Pilot
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
               <Link to="/pricing">
                 <Button 
                   variant="outline"
                   size="lg" 
-                  className="w-full sm:w-auto bg-transparent text-secondary-foreground border border-secondary-foreground/30 hover:bg-white/10 text-base px-10 py-7"
+                  className="w-full sm:w-auto bg-transparent text-background border border-background/30 hover:bg-background/10 px-8 py-6"
                 >
                   View Pricing Plans
                 </Button>
