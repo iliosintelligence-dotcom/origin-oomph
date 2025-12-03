@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { MapPin, TrendingUp, BarChart3, Shield, Users, Zap, CheckCircle2, ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-creative-proximity.jpg";
 import restaurantOwnerImage from "@/assets/hero-restaurant-owner.png";
 import illustrationGeofencing from "@/assets/illustration-geofencing.png";
 import illustrationRevenueGrowth from "@/assets/illustration-revenue-growth.png";
@@ -146,52 +145,53 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary via-primary to-accent py-24 md:py-40 overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.3),transparent)]"></div>
+      <section className="relative bg-[hsl(30,20%,96%)] py-24 md:py-32 overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="space-y-8">
-              <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold text-primary-foreground mb-2">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="flex items-center justify-center gap-2 mb-8">
+              <span className="w-8 h-px bg-foreground/40"></span>
+              <span className="text-sm font-medium text-foreground/70 tracking-wide uppercase">
                 Hyper-Local Mobile Advertising
-              </div>
-              <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground leading-[1.1] tracking-tight">
-                Stop Guessing. Start Converting.
-              </h1>
-              <p className="text-2xl md:text-3xl text-primary-foreground/95 leading-relaxed font-light">
-                The hyper-local ad platform that delivers guaranteed reach and unprecedented conversion rates.
-              </p>
-              <p className="text-lg md:text-xl text-primary-foreground/80 leading-relaxed">
-                Proxim connects your business directly to geofenced users inside the apps they already use—capturing customer attention the moment they enter your service area.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 pt-6">
-                <Link to="/contact">
-                  <Button 
-                    size="lg" 
-                    className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-2xl text-lg px-8 py-6"
-                  >
-                    See the Demo
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </Link>
-                <Link to="/pricing">
-                  <Button 
-                    variant="outline"
-                    size="lg" 
-                    className="w-full sm:w-auto bg-white/10 backdrop-blur-sm text-primary-foreground border-2 border-white/30 hover:bg-white/20 text-lg px-8 py-6"
-                  >
-                    Calculate Your ROI
-                  </Button>
-                </Link>
-              </div>
+              </span>
+              <span className="w-8 h-px bg-foreground/40"></span>
             </div>
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-white/20 to-white/5 rounded-3xl blur-2xl"></div>
-              <img
-                src={heroImage}
-                alt="Proximity marketing delivering targeted ads to nearby customers"
-                className="rounded-2xl w-full h-auto shadow-2xl relative z-10 border-4 border-white/20"
-              />
+            <h1 className="text-5xl md:text-7xl font-bold text-foreground leading-[1.1] tracking-tight mb-8">
+              Stop Guessing.<br />Start Converting.
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-10">
+              Proxim connects your business directly to geofenced users inside the apps they already use—capturing customer attention the moment they enter your service area.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contact">
+                <Button 
+                  size="lg" 
+                  className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-secondary-foreground text-base px-8 py-6"
+                >
+                  Book a Demo
+                </Button>
+              </Link>
+              <Link to="/business-clients">
+                <Button 
+                  variant="outline"
+                  size="lg" 
+                  className="w-full sm:w-auto bg-transparent text-foreground border border-foreground/20 hover:bg-foreground/5 text-base px-8 py-6"
+                >
+                  See How It Works
+                </Button>
+              </Link>
             </div>
+          </div>
+        </div>
+        
+        {/* Trusted Companies */}
+        <div className="container mx-auto px-4 mt-20">
+          <p className="text-center text-sm text-muted-foreground mb-8">Trusted by leading Nigerian businesses</p>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-60">
+            <span className="text-lg font-semibold text-foreground/50">Partner App</span>
+            <span className="text-lg font-semibold text-foreground/50">Retail Brand</span>
+            <span className="text-lg font-semibold text-foreground/50">Restaurant Chain</span>
+            <span className="text-lg font-semibold text-foreground/50">Lifestyle App</span>
+            <span className="text-lg font-semibold text-foreground/50">QSR Brand</span>
           </div>
         </div>
       </section>
@@ -314,8 +314,8 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-20 text-center">
             {stats.map((stat, idx) => (
               <div key={idx} className="space-y-4">
-                <div className="text-6xl md:text-7xl font-bold text-primary tracking-tight">{stat.value}</div>
-                <div className="text-xl text-foreground font-semibold">{stat.label}</div>
+                <div className="text-6xl md:text-7xl font-bold text-foreground tracking-tight">{stat.value}</div>
+                <div className="text-xl text-muted-foreground font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -373,21 +373,20 @@ const Home = () => {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-28 md:py-40 bg-gradient-to-br from-primary via-primary to-accent text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.3),transparent)]"></div>
+      <section className="py-28 md:py-40 bg-secondary text-secondary-foreground relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
               Ready to Stop Wasting Ad Spend?
             </h2>
-            <p className="text-2xl md:text-3xl mb-12 text-primary-foreground/90 leading-relaxed font-light">
+            <p className="text-xl md:text-2xl mb-12 text-secondary-foreground/80 leading-relaxed">
               Launch your first hyper-local campaign and see measurable results within 24 hours. No setup fees. No long-term contracts.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact">
                 <Button 
                   size="lg" 
-                  className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-2xl text-lg px-10 py-7"
+                  className="w-full sm:w-auto bg-white hover:bg-white/90 text-secondary text-base px-10 py-7"
                 >
                   Start Your Free Pilot
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -397,7 +396,7 @@ const Home = () => {
                 <Button 
                   variant="outline"
                   size="lg" 
-                  className="w-full sm:w-auto bg-white/10 backdrop-blur-sm text-primary-foreground border-2 border-white/30 hover:bg-white/20 text-lg px-10 py-7"
+                  className="w-full sm:w-auto bg-transparent text-secondary-foreground border border-secondary-foreground/30 hover:bg-white/10 text-base px-10 py-7"
                 >
                   View Pricing Plans
                 </Button>
