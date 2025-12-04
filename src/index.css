@@ -8,37 +8,38 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Base - Clean white with subtle warmth */
-    --background: 0 0% 100%;
+    /* Base - Warm cream background inspired by Zen Browser */
+    --background: 30 20% 96%;
     --foreground: 220 15% 15%;
 
-    --card: 0 0% 100%;
+    /* Card - Slightly lighter for contrast */
+    --card: 30 15% 98%;
     --card-foreground: 220 15% 15%;
 
-    --popover: 0 0% 100%;
+    --popover: 30 15% 98%;
     --popover-foreground: 220 15% 15%;
 
-    /* Primary - Vibrant Proxim Orange */
-    --primary: 17 100% 60%;
+    /* Primary - Warm terracotta/coral accent (like Zen's calmer) */
+    --primary: 14 70% 55%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Modern Slate */
-    --secondary: 220 20% 25%;
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary - Deep charcoal for buttons */
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 30 20% 96%;
 
-    --muted: 220 15% 97%;
+    --muted: 30 15% 92%;
     --muted-foreground: 220 10% 45%;
 
-    /* Accent - Electric Coral */
-    --accent: 14 95% 58%;
+    /* Accent - Warm coral */
+    --accent: 14 70% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 17 100% 60%;
+    --border: 30 10% 88%;
+    --input: 30 10% 88%;
+    --ring: 14 70% 55%;
 
     /* Success - Fresh Green */
     --success: 142 71% 45%;
