@@ -59,12 +59,19 @@ const About = () => {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-20 md:py-32 bg-gradient-to-br from-primary via-info to-primary">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-              Empowering Nigerian Businesses
+        <section className="py-20 md:py-32 bg-background">
+          <div className="container mx-auto px-4 text-center max-w-4xl">
+            <div className="flex items-center justify-center gap-2 mb-8">
+              <span className="w-8 h-px bg-foreground/40"></span>
+              <span className="text-sm font-medium text-foreground/70 tracking-wide uppercase">
+                About Us
+              </span>
+              <span className="w-8 h-px bg-foreground/40"></span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+              Empowering <span className="font-bodoni italic text-primary">Nigerian Businesses</span>
             </h1>
-            <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Our mission is to empower Nigerian businesses to thrive in the digital age by connecting them with nearby customers through respectful, data-driven marketing
             </p>
           </div>
@@ -183,20 +190,20 @@ const About = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-r from-primary to-info">
+        <section className="py-16 md:py-24 bg-secondary">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
               <div>
-                <div className="text-5xl font-bold text-primary-foreground mb-2">2023</div>
-                <p className="text-lg text-primary-foreground/80">Founded</p>
+                <div className="text-5xl font-bold text-secondary-foreground mb-2">2023</div>
+                <p className="text-lg text-secondary-foreground/80">Founded</p>
               </div>
               <div>
-                <div className="text-5xl font-bold text-primary-foreground mb-2">3+</div>
-                <p className="text-lg text-primary-foreground/80">Major Cities</p>
+                <div className="text-5xl font-bold text-secondary-foreground mb-2">3+</div>
+                <p className="text-lg text-secondary-foreground/80">Major Cities</p>
               </div>
               <div>
-                <div className="text-5xl font-bold text-primary-foreground mb-2">140M+</div>
-                <p className="text-lg text-primary-foreground/80">Users Reached</p>
+                <div className="text-5xl font-bold text-secondary-foreground mb-2">140M+</div>
+                <p className="text-lg text-secondary-foreground/80">Users Reached</p>
               </div>
             </div>
           </div>

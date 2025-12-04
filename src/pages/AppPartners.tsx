@@ -25,7 +25,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
-import illustrationAppPartnership from "@/assets/illustration-app-partnership.png";
+import illustrationAdvertising from "@/assets/illustration-advertising.jpg";
 
 const AppPartners = () => {
   // Revenue Calculator State
@@ -213,19 +213,26 @@ const AppPartners = () => {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-20 md:py-32 bg-primary">
+        <section className="py-20 md:py-32 bg-background">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6">
-                <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground leading-tight">
-                  Monetize your app with proximity marketing
+                <div className="flex items-center gap-2">
+                  <span className="w-8 h-px bg-foreground/40"></span>
+                  <span className="text-sm font-medium text-foreground/70 tracking-wide uppercase">
+                    App Partners
+                  </span>
+                  <span className="w-8 h-px bg-foreground/40"></span>
+                </div>
+                <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
+                  Monetize your app with <span className="font-bodoni italic text-primary">proximity marketing</span>
                 </h1>
-                <p className="text-xl text-primary-foreground/90 leading-relaxed">
+                <p className="text-xl text-muted-foreground leading-relaxed">
                   Turn your Nigerian user base into a revenue stream. Easy integration, privacy-first approach, and transparent revenue sharing.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a href="#calculator">
-                    <Button size="lg" className="w-full sm:w-auto">
+                    <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
                       Calculate Revenue Potential
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
@@ -233,7 +240,8 @@ const AppPartners = () => {
                   <a href="#benefits">
                     <Button 
                       size="lg" 
-                      className="w-full sm:w-auto bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+                      variant="outline"
+                      className="bg-transparent text-foreground border border-foreground/20 hover:bg-foreground/5"
                     >
                       Learn More
                     </Button>
@@ -242,9 +250,9 @@ const AppPartners = () => {
               </div>
               <div>
                 <img
-                  src={illustrationAppPartnership}
+                  src={illustrationAdvertising}
                   alt="App partnership revenue growth"
-                  className="rounded w-full h-auto"
+                  className="rounded-lg w-full h-auto"
                 />
               </div>
             </div>

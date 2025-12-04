@@ -145,25 +145,32 @@ const BusinessClients = () => {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-20 md:py-32 bg-secondary">
+        <section className="py-20 md:py-32 bg-background">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
-                <h1 className="text-4xl md:text-6xl font-bold text-secondary-foreground leading-tight">
-                  Bring Customers Through Your Door with Hyper-Precise Offers
+                <div className="flex items-center gap-2">
+                  <span className="w-8 h-px bg-foreground/40"></span>
+                  <span className="text-sm font-medium text-foreground/70 tracking-wide uppercase">
+                    Business Clients
+                  </span>
+                  <span className="w-8 h-px bg-foreground/40"></span>
+                </div>
+                <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
+                  Bring Customers Through Your Door with <span className="font-bodoni italic text-primary">Hyper-Precise Offers</span>
                 </h1>
-                <p className="text-xl text-secondary-foreground/90 leading-relaxed">
+                <p className="text-xl text-muted-foreground leading-relaxed">
                   Over 85% of Nigerians own mobile devices. Proxim turns those phones into a direct line to nearby shoppers, helping you increase foot traffic and sales.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/contact">
-                    <Button variant="primary" size="lg" className="w-full sm:w-auto">
+                    <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
                       Start Free Trial
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                   </Link>
                   <Link to="/pricing">
-                    <Button size="lg" className="w-full sm:w-auto bg-secondary-foreground text-secondary hover:bg-secondary-foreground/90">
+                    <Button size="lg" variant="outline" className="bg-transparent text-foreground border border-foreground/20 hover:bg-foreground/5">
                       View Pricing
                     </Button>
                   </Link>
