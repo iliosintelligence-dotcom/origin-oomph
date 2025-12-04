@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-creative-proximity.jpg";
+import illustrationKpi from "@/assets/illustration-kpi-dashboard.png";
 
 const Pricing = () => {
   const businessPlans = [
@@ -99,47 +99,37 @@ const Pricing = () => {
     <div className="min-h-screen flex flex-col bg-muted/30">
       <Header />
       <main className="flex-1">
-        {/* Hero Section - Modern Card Style */}
-        <section className="py-8 md:py-12">
+        {/* Hero Section */}
+        <section className="py-20 md:py-32 bg-background">
           <div className="container mx-auto px-4">
-            <div className="relative rounded-3xl overflow-hidden">
-              {/* Background Image with Overlay */}
-              <div className="absolute inset-0">
-                <img 
-                  src={heroImage} 
-                  alt="" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-foreground/70 backdrop-blur-sm" />
-              </div>
-              
-              {/* Content */}
-              <div className="relative z-10 px-6 py-20 md:py-28 lg:py-32 text-center">
-                {/* Badge Pill */}
-                <div className="inline-flex items-center gap-2 bg-background/10 backdrop-blur-md border border-background/20 rounded-full px-4 py-2 mb-8">
-                  <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-                  <span className="text-sm font-medium text-background">Pricing That Scales With You</span>
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-6">
+                <div className="flex items-center gap-2">
+                  <span className="w-8 h-px bg-foreground/40"></span>
+                  <span className="text-sm font-medium text-foreground/70 tracking-wide uppercase">
+                    Pricing
+                  </span>
+                  <span className="w-8 h-px bg-foreground/40"></span>
                 </div>
-                
-                {/* Main Headline */}
-                <h1 className="font-bodoni text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-background mb-6 max-w-4xl mx-auto leading-tight">
-                  Transparent Pricing
-                  <br />
-                  <span className="text-secondary">For Every Stage</span>
+                <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
+                  Transparent Pricing <span className="font-bodoni italic text-primary">For Every Stage</span>
                 </h1>
-                
-                {/* Subheadline */}
-                <p className="text-lg md:text-xl text-background/80 max-w-2xl mx-auto mb-10">
+                <p className="text-xl text-muted-foreground leading-relaxed">
                   Choose the plan that fits your growth goals. Start with a free trial for businesses or free integration for app partners.
                 </p>
-                
-                {/* CTA Button */}
                 <Link to="/contact">
-                  <Button size="lg" className="bg-background text-foreground hover:bg-background/90 rounded-full px-8">
+                  <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
                     Get Started
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
+              </div>
+              <div>
+                <img
+                  src={illustrationKpi}
+                  alt="Analytics dashboard"
+                  className="rounded-lg w-full h-auto"
+                />
               </div>
             </div>
           </div>
