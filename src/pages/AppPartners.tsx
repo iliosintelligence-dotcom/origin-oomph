@@ -260,135 +260,132 @@ const AppPartners = () => {
         </section>
 
         {/* Revenue Calculator */}
-        <section id="calculator" className="py-16 md:py-24 bg-muted">
+        <section id="calculator" className="py-16 md:py-24 bg-secondary">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-4">
                   Calculate Your Revenue Potential
                 </h2>
-                <p className="text-lg text-muted-foreground">
-                  Adjust the sliders to see how much you could earn as a Proxim! partner
+                <p className="text-lg text-secondary-foreground/70">
+                  Adjust the sliders to see how much you could earn as a Proxim partner
                 </p>
               </div>
 
-              <Card className="border-2 shadow-2xl">
-                <CardContent className="p-8 md:p-12">
-                  <div className="space-y-8">
-                    {/* Input Controls */}
-                    <div className="space-y-6">
-                      <div className="space-y-3">
-                        <div className="flex justify-between items-center">
-                          <Label className="text-base font-semibold">Monthly Active Users (MAU)</Label>
-                          <span className="text-2xl font-bold text-secondary">
-                            {monthlyUsers.toLocaleString()}
-                          </span>
-                        </div>
-                        <Slider
-                          value={[monthlyUsers]}
-                          onValueChange={(value) => setMonthlyUsers(value[0])}
-                          min={10000}
-                          max={1000000}
-                          step={10000}
-                          className="w-full"
-                        />
-                        <div className="flex justify-between text-sm text-muted-foreground">
-                          <span>10k</span>
-                          <span>1M</span>
-                        </div>
-                      </div>
-
-                      <div className="space-y-3">
-                        <div className="flex justify-between items-center">
-                          <Label className="text-base font-semibold">Proximity Reach %</Label>
-                          <span className="text-2xl font-bold text-secondary">{proximityReach}%</span>
-                        </div>
-                        <Slider
-                          value={[proximityReach]}
-                          onValueChange={(value) => setProximityReach(value[0])}
-                          min={5}
-                          max={50}
-                          step={1}
-                          className="w-full"
-                        />
-                        <div className="flex justify-between text-sm text-muted-foreground">
-                          <span>5%</span>
-                          <span>50%</span>
-                        </div>
-                      </div>
-
-                      <div className="space-y-3">
-                        <div className="flex justify-between items-center">
-                          <Label className="text-base font-semibold">Click-Through Rate (CTR) %</Label>
-                          <span className="text-2xl font-bold text-secondary">{ctr}%</span>
-                        </div>
-                        <Slider
-                          value={[ctr]}
-                          onValueChange={(value) => setCtr(value[0])}
-                          min={2}
-                          max={20}
-                          step={1}
-                          className="w-full"
-                        />
-                        <div className="flex justify-between text-sm text-muted-foreground">
-                          <span>2%</span>
-                          <span>20%</span>
-                        </div>
-                      </div>
+              <div className="grid lg:grid-cols-2 gap-6">
+                {/* Input Controls Card */}
+                <div className="bg-secondary-foreground/5 backdrop-blur rounded-3xl p-8 space-y-8">
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <Label className="text-base font-medium text-secondary-foreground/80">Monthly Active Users (MAU)</Label>
+                      <span className="text-2xl font-bold text-primary">
+                        {monthlyUsers.toLocaleString()}
+                      </span>
                     </div>
-
-                    {/* Revenue Projections */}
-                    <div className="pt-8 border-t">
-                      <h3 className="text-xl font-bold text-foreground mb-6 text-center">
-                        Projected Monthly Revenue
-                      </h3>
-                      <div className="grid md:grid-cols-3 gap-6">
-                        <Card className="border-2 hover:border-warning transition-colors">
-                          <CardContent className="p-6 text-center">
-                            <div className="text-sm text-muted-foreground mb-2 font-medium">Conservative</div>
-                            <div className="text-3xl md:text-4xl font-bold text-warning mb-2">
-                              {formatCurrency(calculateRevenue("conservative"))}
-                            </div>
-                            <div className="text-xs text-muted-foreground">3% CVR, Low frequency</div>
-                          </CardContent>
-                        </Card>
-
-                        <Card className="border-2 border-secondary shadow-xl scale-105">
-                          <CardContent className="p-6 text-center">
-                            <div className="text-sm text-secondary mb-2 font-bold">Base Scenario</div>
-                            <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">
-                              {formatCurrency(calculateRevenue("base"))}
-                            </div>
-                            <div className="text-xs text-muted-foreground">5% CVR, Avg frequency</div>
-                          </CardContent>
-                        </Card>
-
-                        <Card className="border-2 hover:border-accent transition-colors">
-                          <CardContent className="p-6 text-center">
-                            <div className="text-sm text-muted-foreground mb-2 font-medium">Optimistic</div>
-                            <div className="text-3xl md:text-4xl font-bold text-accent mb-2">
-                              {formatCurrency(calculateRevenue("optimistic"))}
-                            </div>
-                            <div className="text-xs text-muted-foreground">8% CVR, High frequency</div>
-                          </CardContent>
-                        </Card>
-                      </div>
-                    </div>
-
-                    <div className="pt-6 text-center">
-                      <p className="text-sm text-muted-foreground mb-4">
-                        * Projections based on 15% revenue share. Actual results may vary.
-                      </p>
-                      <Link to="#partnership-form">
-                        <Button size="lg">
-                          Schedule Partnership Call
-                          <ArrowRight className="ml-2 w-5 h-5" />
-                        </Button>
-                      </Link>
+                    <Slider
+                      value={[monthlyUsers]}
+                      onValueChange={(value) => setMonthlyUsers(value[0])}
+                      min={10000}
+                      max={1000000}
+                      step={10000}
+                      className="w-full [&_[role=slider]]:bg-primary [&_[role=slider]]:border-primary [&_.bg-primary]:bg-primary"
+                    />
+                    <div className="flex justify-between text-sm text-secondary-foreground/50">
+                      <span>10k</span>
+                      <span>1M</span>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <Label className="text-base font-medium text-secondary-foreground/80">Proximity Reach %</Label>
+                      <span className="text-2xl font-bold text-primary">{proximityReach}%</span>
+                    </div>
+                    <Slider
+                      value={[proximityReach]}
+                      onValueChange={(value) => setProximityReach(value[0])}
+                      min={5}
+                      max={50}
+                      step={1}
+                      className="w-full [&_[role=slider]]:bg-primary [&_[role=slider]]:border-primary [&_.bg-primary]:bg-primary"
+                    />
+                    <div className="flex justify-between text-sm text-secondary-foreground/50">
+                      <span>5%</span>
+                      <span>50%</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <Label className="text-base font-medium text-secondary-foreground/80">Click-Through Rate (CTR) %</Label>
+                      <span className="text-2xl font-bold text-primary">{ctr}%</span>
+                    </div>
+                    <Slider
+                      value={[ctr]}
+                      onValueChange={(value) => setCtr(value[0])}
+                      min={2}
+                      max={20}
+                      step={1}
+                      className="w-full [&_[role=slider]]:bg-primary [&_[role=slider]]:border-primary [&_.bg-primary]:bg-primary"
+                    />
+                    <div className="flex justify-between text-sm text-secondary-foreground/50">
+                      <span>2%</span>
+                      <span>20%</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Revenue Projections Card */}
+                <div className="space-y-6">
+                  <h3 className="text-xl font-bold text-secondary-foreground text-center">
+                    Projected Monthly Revenue
+                  </h3>
+                  
+                  <div className="space-y-4">
+                    <div className="bg-secondary-foreground/5 backdrop-blur rounded-2xl p-6 flex items-center justify-between">
+                      <div>
+                        <div className="text-sm text-secondary-foreground/60 font-medium">Conservative</div>
+                        <div className="text-xs text-secondary-foreground/40 mt-1">3% CVR, Low frequency</div>
+                      </div>
+                      <div className="text-3xl font-bold text-primary">
+                        {formatCurrency(calculateRevenue("conservative"))}
+                      </div>
+                    </div>
+
+                    <div className="bg-primary/20 border-2 border-primary rounded-2xl p-6 flex items-center justify-between">
+                      <div>
+                        <div className="text-sm text-primary font-bold">Base Scenario</div>
+                        <div className="text-xs text-secondary-foreground/40 mt-1">5% CVR, Avg frequency</div>
+                      </div>
+                      <div className="text-3xl font-bold text-primary">
+                        {formatCurrency(calculateRevenue("base"))}
+                      </div>
+                    </div>
+
+                    <div className="bg-secondary-foreground/5 backdrop-blur rounded-2xl p-6 flex items-center justify-between">
+                      <div>
+                        <div className="text-sm text-secondary-foreground/60 font-medium">Optimistic</div>
+                        <div className="text-xs text-secondary-foreground/40 mt-1">8% CVR, High frequency</div>
+                      </div>
+                      <div className="text-3xl font-bold text-accent">
+                        {formatCurrency(calculateRevenue("optimistic"))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="text-center pt-4">
+                    <p className="text-sm text-secondary-foreground/50 mb-4">
+                      * Projections based on 15% revenue share. Actual results may vary.
+                    </p>
+                    <Link to="#partnership-form">
+                      <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                        Schedule Partnership Call
+                        <ArrowRight className="ml-2 w-5 h-5" />
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
