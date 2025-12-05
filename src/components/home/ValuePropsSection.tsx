@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MapPin, TrendingUp, BarChart3, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import illustrationGeofencing from "@/assets/illustration-geofencing.png";
 import illustrationRevenueGrowth from "@/assets/illustration-revenue-growth.png";
 import illustrationAnalytics from "@/assets/illustration-analytics.jpg";
@@ -31,7 +32,13 @@ const ValuePropsSection = () => {
   return (
     <section className="py-24 md:py-32 bg-card">
       <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
+        >
           <div className="flex items-center justify-center gap-2 mb-6">
             <span className="w-8 h-px bg-foreground/30"></span>
             <span className="text-sm font-medium text-foreground/60 tracking-wide uppercase">Why Proxim</span>
@@ -44,34 +51,51 @@ const ValuePropsSection = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Traditional advertising wastes 60%+ of your budget on people who will never visit your store. Proxim delivers precision targeting that guarantees optimal reach.
           </p>
-        </div>
+        </motion.div>
         <div className="space-y-24">
           {valueProps.map((prop, idx) => (
-            <div key={idx} className={`grid lg:grid-cols-2 gap-16 items-center`}>
-              <div className={idx % 2 === 1 ? 'lg:order-2' : ''}>
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className={`grid lg:grid-cols-2 gap-16 items-center`}
+            >
+              <motion.div
+                className={idx % 2 === 1 ? 'lg:order-2' : ''}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
                 <img 
                   src={prop.image} 
                   alt={prop.title} 
                   className="w-full h-auto rounded-lg"
                 />
-              </div>
+              </motion.div>
               <div className={`space-y-5 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-foreground/5 text-foreground">
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                  className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-foreground/5 text-foreground"
+                >
                   <prop.icon className="w-6 h-6" />
-                </div>
+                </motion.div>
                 <h3 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">{prop.title}</h3>
                 {prop.subtitle && <p className="text-lg font-medium text-foreground/70">{prop.subtitle}</p>}
                 <p className="text-muted-foreground leading-relaxed">{prop.description}</p>
                 <div className="pt-2">
                   <Link to="/business-clients">
-                    <Button variant="outline" size="default" className="group border-foreground/20 hover:bg-foreground/5">
+                    <Button variant="outline" size="default" className="group border-foreground/20 hover:bg-foreground/5 transition-all duration-300 hover:scale-105">
                       Learn More
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </Button>
                   </Link>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
