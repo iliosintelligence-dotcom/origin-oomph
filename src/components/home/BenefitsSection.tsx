@@ -1,4 +1,5 @@
 import { TrendingUp, Users, Shield, MapPin, Zap, CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const benefits = [
   { 
@@ -37,7 +38,13 @@ const BenefitsSection = () => {
   return (
     <section className="py-24 md:py-32 bg-card">
       <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <div className="flex items-center justify-center gap-2 mb-6">
             <span className="w-8 h-px bg-foreground/30"></span>
             <span className="text-sm font-medium text-foreground/60 tracking-wide uppercase">Benefits</span>
@@ -50,19 +57,28 @@ const BenefitsSection = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Every feature is engineered for one goal: Maximum ROI with zero wasted spend.
           </p>
-        </div>
+        </motion.div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
           {benefits.map((benefit, idx) => (
-            <div 
-              key={idx} 
-              className="group"
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              whileHover={{ y: -5 }}
+              className="group cursor-default"
             >
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-foreground/5 text-foreground mb-5 group-hover:bg-foreground group-hover:text-background transition-colors">
+              <motion.div
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ duration: 0.2 }}
+                className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-foreground/5 text-foreground mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"
+              >
                 <benefit.icon className="w-6 h-6" />
-              </div>
+              </motion.div>
               <h3 className="text-xl font-bold text-foreground mb-3 leading-tight">{benefit.title}</h3>
               <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
