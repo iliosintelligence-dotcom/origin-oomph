@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MapPin, TrendingUp, BarChart3, ArrowRight } from "lucide-react";
 import illustrationGeofencing from "@/assets/illustration-geofencing.png";
-import illustrationRevenueGrowth from "@/assets/illustration-revenue-growth.png";
-import illustrationAnalytics from "@/assets/illustration-analytics.png";
+import illustrationRevenueGrowth from "@/assets/illustration-revenue-growth.jpg";
+import illustrationAnalytics from "@/assets/illustration-analytics.jpg";
 
 const valueProps = [
   {
