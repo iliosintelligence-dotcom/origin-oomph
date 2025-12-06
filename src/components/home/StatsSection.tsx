@@ -1,5 +1,6 @@
 import { TrendingUp, Users, DollarSign } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const stats = [
   { 
@@ -23,9 +24,21 @@ const stats = [
 ];
 
 const StatsSection = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
+
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section ref={sectionRef} className="py-20 bg-background relative overflow-hidden">
+      <motion.div 
+        className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none"
+        style={{ y: backgroundY }}
+      />
+      <div className="container mx-auto px-4 max-w-6xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

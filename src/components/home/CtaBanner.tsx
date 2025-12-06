@@ -1,17 +1,38 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const CtaBanner = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1, 0.95]);
+
   return (
-    <section className="py-24 md:py-32 bg-secondary text-secondary-foreground overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section ref={sectionRef} className="py-24 md:py-32 bg-secondary text-secondary-foreground overflow-hidden relative">
+      {/* Parallax background elements */}
+      <motion.div 
+        className="absolute inset-0 pointer-events-none"
+        style={{ y: backgroundY }}
+      >
+        <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-primary/10 blur-2xl" />
+        <div className="absolute bottom-10 right-10 w-48 h-48 rounded-full bg-primary/10 blur-2xl" />
+        <div className="absolute top-1/2 left-1/3 w-24 h-24 rounded-full bg-primary/5 blur-xl" />
+      </motion.div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          style={{ scale }}
           className="max-w-3xl mx-auto text-center"
         >
           <motion.h2
@@ -40,7 +61,11 @@ const CtaBanner = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Link to="/contact">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+              <motion.div 
+                whileHover={{ scale: 1.05, y: -3 }} 
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
                 <Button 
                   size="lg" 
                   className="w-full sm:w-auto bg-background hover:bg-background/90 text-foreground px-8 py-6 transition-all duration-300 hover:shadow-lg"
@@ -51,7 +76,11 @@ const CtaBanner = () => {
               </motion.div>
             </Link>
             <Link to="/pricing">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+              <motion.div 
+                whileHover={{ scale: 1.05, y: -3 }} 
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
                 <Button 
                   variant="outline"
                   size="lg" 
