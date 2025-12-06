@@ -1,10 +1,51 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MapPin, TrendingUp, BarChart3, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState } from "react";
 import illustrationGeofencing from "@/assets/illustration-geofencing.png";
 import illustrationRevenueGrowth from "@/assets/illustration-revenue-growth.png";
 import illustrationAnalytics from "@/assets/illustration-analytics.jpg";
+import { ImageSkeleton } from "@/components/ui/content-skeleton";
+
+// Parallax image wrapper with loading skeleton
+const ParallaxImageWrapper = ({ 
+  src, 
+  alt, 
+  className = "" 
+}: { 
+  src: string; 
+  alt: string; 
+  className?: string; 
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.05, 1, 1.05]);
+
+  return (
+    <motion.div
+      ref={ref}
+      className={`relative overflow-hidden rounded-lg ${className}`}
+      whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.3 }}
+    >
+      {!isLoaded && <ImageSkeleton className="absolute inset-0" />}
+      <motion.img
+        src={src}
+        alt={alt}
+        style={{ y, scale }}
+        onLoad={() => setIsLoaded(true)}
+        className={`w-full h-auto transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+      />
+    </motion.div>
+  );
+};
 
 const valueProps = [
   {
@@ -62,17 +103,11 @@ const ValuePropsSection = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className={`grid lg:grid-cols-2 gap-16 items-center`}
             >
-              <motion.div
+              <ParallaxImageWrapper
+                src={prop.image}
+                alt={prop.title}
                 className={idx % 2 === 1 ? 'lg:order-2' : ''}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <img 
-                  src={prop.image} 
-                  alt={prop.title} 
-                  className="w-full h-auto rounded-lg"
-                />
-              </motion.div>
+              />
               <div className={`space-y-5 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
                 <motion.div
                   initial={{ scale: 0.8, opacity: 0 }}

@@ -1,12 +1,25 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const HeroSection = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.7]);
+
   return (
-    <section className="relative bg-background py-24 md:py-32 overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10">
+    <section ref={containerRef} className="relative bg-background py-24 md:py-32 overflow-hidden">
+      <motion.div 
+        className="container mx-auto px-4 relative z-10"
+        style={{ y: textY, opacity }}
+      >
         <div className="text-center max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -66,7 +79,7 @@ const HeroSection = () => {
             </Link>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
       
       {/* Trusted Companies */}
       <motion.div
@@ -83,7 +96,8 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.6 + i * 0.1 }}
-              className="text-lg font-semibold text-foreground/50"
+              whileHover={{ scale: 1.1, color: "hsl(var(--primary))" }}
+              className="text-lg font-semibold text-foreground/50 cursor-default"
             >
               {name}
             </motion.span>

@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const testimonials = [
   {
@@ -19,9 +20,27 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const decorY = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+
   return (
-    <section className="py-24 md:py-32 bg-card">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section ref={sectionRef} className="py-24 md:py-32 bg-card relative overflow-hidden">
+      {/* Parallax decorative element */}
+      <motion.div 
+        className="absolute -right-20 top-1/4 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none"
+        style={{ y: decorY }}
+      />
+      <motion.div 
+        className="absolute -left-20 bottom-1/4 w-64 h-64 rounded-full bg-primary/5 blur-3xl pointer-events-none"
+        style={{ y: useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]) }}
+      />
+      
+      <div className="container mx-auto px-4 max-w-6xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,8 +68,12 @@ const TestimonialsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
-              whileHover={{ y: -8, scale: 1.02 }}
-              className="bg-background rounded-lg p-8 space-y-6 border border-border cursor-default"
+              whileHover={{ 
+                y: -8, 
+                scale: 1.02,
+                boxShadow: "0 20px 40px -15px rgba(0,0,0,0.1)"
+              }}
+              className="bg-background rounded-lg p-8 space-y-6 border border-border cursor-default transition-shadow duration-300"
             >
               <motion.p
                 initial={{ opacity: 0 }}
@@ -62,7 +85,13 @@ const TestimonialsSection = () => {
                 "{testimonial.quote}"
               </motion.p>
               <div className="pt-4 border-t border-border">
-                <div className="font-bold text-foreground">{testimonial.author}</div>
+                <motion.div 
+                  className="font-bold text-foreground"
+                  whileHover={{ color: "hsl(var(--primary))" }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {testimonial.author}
+                </motion.div>
                 <div className="text-muted-foreground text-sm">{testimonial.role}</div>
               </div>
             </motion.div>
