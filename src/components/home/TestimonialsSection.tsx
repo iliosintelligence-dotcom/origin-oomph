@@ -1,66 +1,46 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    quote: "Proxim! helped me bring in 27% more customers during lunch hours. The notifications felt personal and respectful, and my sales jumped within the first week.",
+    quote: "Proxim helped me bring in 27% more customers during lunch hours. The notifications felt personal and respectful, and my sales jumped within the first week.",
     author: "Lola",
     role: "Owner, Lagos Café",
   },
   {
-    quote: "Integrating Proxim!'s SDK into our lifestyle app was seamless. We've unlocked a steady revenue stream and our users enjoy relevant deals as they move around the city.",
+    quote: "Integrating Proxim's SDK into our lifestyle app was seamless. We've unlocked a steady revenue stream and our users enjoy relevant deals.",
     author: "Chinedu",
     role: "Product Manager, Ride-Sharing App",
   },
   {
-    quote: "Our Lagos lifestyle app integrated Proxim! and I saw a 14% increase in daily active sessions. Our monthly ad revenue doubled within three months.",
+    quote: "Our Lagos lifestyle app integrated Proxim and I saw a 14% increase in daily active sessions. Our monthly ad revenue doubled within three months.",
     author: "Ibrahim Yusuf",
     role: "Marketing Director, Lifestyle App",
   },
 ];
 
 const TestimonialsSection = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-
-  const decorY = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
-
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-card relative overflow-hidden">
-      {/* Parallax decorative element */}
-      <motion.div 
-        className="absolute -right-20 top-1/4 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none"
-        style={{ y: decorY }}
-      />
-      <motion.div 
-        className="absolute -left-20 bottom-1/4 w-64 h-64 rounded-full bg-primary/5 blur-3xl pointer-events-none"
-        style={{ y: useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]) }}
-      />
-      
-      <div className="container mx-auto px-4 max-w-6xl relative z-10">
+    <section className="py-32 md:py-48 bg-card">
+      <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="max-w-xl mb-24"
         >
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <span className="w-8 h-px bg-foreground/30"></span>
-            <span className="text-sm font-medium text-foreground/60 tracking-wide uppercase">Testimonials</span>
-            <span className="w-8 h-px bg-foreground/30"></span>
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+          <span className="text-xs font-medium text-muted-foreground tracking-widest uppercase mb-8 block">
+            Testimonials
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-[1.1]">
             Real Results from <span className="font-bodoni italic">Real Businesses</span>
           </h2>
           <p className="text-lg text-muted-foreground">
             Join hundreds of Nigerian businesses already driving revenue with Proxim
           </p>
         </motion.div>
-        <div className="grid lg:grid-cols-3 gap-8">
+        
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
           {testimonials.map((testimonial, idx) => (
             <motion.div
               key={idx}
@@ -68,30 +48,13 @@ const TestimonialsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
-              whileHover={{ 
-                y: -8, 
-                scale: 1.02,
-                boxShadow: "0 20px 40px -15px rgba(0,0,0,0.1)"
-              }}
-              className="bg-background rounded-lg p-8 space-y-6 border border-border cursor-default transition-shadow duration-300"
+              className="border-t border-border pt-8"
             >
-              <motion.p
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.15 + 0.2 }}
-                className="text-foreground leading-relaxed"
-              >
+              <p className="text-foreground leading-relaxed mb-8 text-lg">
                 "{testimonial.quote}"
-              </motion.p>
-              <div className="pt-4 border-t border-border">
-                <motion.div 
-                  className="font-bold text-foreground"
-                  whileHover={{ color: "hsl(var(--primary))" }}
-                  transition={{ duration: 0.2 }}
-                >
-                  {testimonial.author}
-                </motion.div>
+              </p>
+              <div>
+                <div className="font-bold text-foreground">{testimonial.author}</div>
                 <div className="text-muted-foreground text-sm">{testimonial.role}</div>
               </div>
             </motion.div>

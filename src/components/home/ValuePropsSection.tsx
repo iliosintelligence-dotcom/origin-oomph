@@ -51,49 +51,48 @@ const valueProps = [
   {
     icon: MapPin,
     title: "Precise Location Targeting",
-    description: "Capture customer attention the moment they enter your service area, eliminating wasted ad spend. Reach only consumers within walking distance of your shop—no more paying for impressions that never convert.",
+    description: "Capture customer attention the moment they enter your service area, eliminating wasted ad spend.",
     image: illustrationGeofencing,
   },
   {
     icon: TrendingUp,
     title: "Immediate Revenue Impact",
     subtitle: "Your Message, Delivered Inside Their Apps.",
-    description: "Proxim drives foot traffic and in-store conversions by serving hyper-relevant offers directly to geofenced users via the popular mobile apps on their phones. Our clients see an average 35% increase in walk-ins within the first month.",
+    description: "Proxim drives foot traffic and in-store conversions by serving hyper-relevant offers directly to geofenced users.",
     image: illustrationRevenueGrowth,
   },
   {
     icon: BarChart3,
     title: "Performance You Can Measure",
-    description: "Pay only for results, not impressions. Track views, clicks, redemptions, and revenue in real-time through our intuitive dashboard. Optimize your campaigns based on actual ROI data.",
+    description: "Pay only for results, not impressions. Track views, clicks, redemptions, and revenue in real-time.",
     image: illustrationAnalytics,
   },
 ];
 
 const ValuePropsSection = () => {
   return (
-    <section className="py-24 md:py-32 bg-card">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section className="py-32 md:py-48 bg-card">
+      <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="max-w-2xl mb-24 md:mb-32"
         >
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <span className="w-8 h-px bg-foreground/30"></span>
-            <span className="text-sm font-medium text-foreground/60 tracking-wide uppercase">Why Proxim</span>
-            <span className="w-8 h-px bg-foreground/30"></span>
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+          <span className="text-xs font-medium text-muted-foreground tracking-widest uppercase mb-8 block">
+            Why Proxim
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-8 leading-[1.1]">
             Eliminate Wasted Ad Spend.<br />
             <span className="font-bodoni italic">Maximize Every Naira.</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Traditional advertising wastes 60%+ of your budget on people who will never visit your store. Proxim delivers precision targeting that guarantees optimal reach.
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Traditional advertising wastes 60%+ of your budget on people who will never visit your store.
           </p>
         </motion.div>
-        <div className="space-y-24">
+        
+        <div className="space-y-32 md:space-y-48">
           {valueProps.map((prop, idx) => (
             <motion.div
               key={idx}
@@ -101,29 +100,29 @@ const ValuePropsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className={`grid lg:grid-cols-2 gap-16 items-center`}
+              className={`grid lg:grid-cols-2 gap-16 lg:gap-24 items-center`}
             >
               <ParallaxImageWrapper
                 src={prop.image}
                 alt={prop.title}
                 className={idx % 2 === 1 ? 'lg:order-2' : ''}
               />
-              <div className={`space-y-5 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
+              <div className={`space-y-6 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
                 <motion.div
                   initial={{ scale: 0.8, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.2 }}
-                  className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-foreground/5 text-foreground"
+                  className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-foreground/5 text-foreground"
                 >
-                  <prop.icon className="w-6 h-6" />
+                  <prop.icon className="w-5 h-5" />
                 </motion.div>
                 <h3 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">{prop.title}</h3>
-                {prop.subtitle && <p className="text-lg font-medium text-foreground/70">{prop.subtitle}</p>}
-                <p className="text-muted-foreground leading-relaxed">{prop.description}</p>
-                <div className="pt-2">
+                {prop.subtitle && <p className="text-lg font-medium text-foreground/60">{prop.subtitle}</p>}
+                <p className="text-muted-foreground leading-relaxed text-lg">{prop.description}</p>
+                <div className="pt-4">
                   <Link to="/business-clients">
-                    <Button variant="outline" size="default" className="group border-foreground/20 hover:bg-foreground/5 transition-all duration-300 hover:scale-105">
+                    <Button variant="ghost" size="default" className="group px-0 hover:bg-transparent hover:text-primary transition-colors">
                       Learn More
                       <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </Button>
