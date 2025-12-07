@@ -130,6 +130,17 @@ All colors MUST be HSL.
     font-weight: 400;
   }
 
+  /* Custom cursor - hide default on desktop for interactive elements */
+  @media (min-width: 1024px) {
+    body {
+      cursor: none;
+    }
+
+    a, button, [role="button"], .interactive {
+      cursor: none;
+    }
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Bodoni Moda', Georgia, serif;
     font-weight: 700;
