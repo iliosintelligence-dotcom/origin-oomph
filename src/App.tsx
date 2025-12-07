@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { AnimatePresence } from "framer-motion";
 import { PageTransition } from "@/components/ui/page-transition";
+import { CustomCursor } from "@/components/ui/custom-cursor";
+import { FloatingContact } from "@/components/ui/floating-contact";
 import Index from "./pages/Index";
 import AppPartners from "./pages/AppPartners";
 import BusinessClients from "./pages/BusinessClients";
@@ -44,8 +46,10 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <CustomCursor />
       <BrowserRouter>
         <ScrollToTop />
+        <FloatingContact />
         <AnimatedRoutes />
       </BrowserRouter>
     </TooltipProvider>

@@ -31,13 +31,17 @@ const Header = () => {
         <nav className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <motion.img 
-              src={logo} 
-              alt="Proxim!" 
+            <motion.div
               className="h-14 md:h-16 w-auto"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
-            />
+            >
+              <img 
+                src={logo} 
+                alt="Proxim!" 
+                className="h-full w-auto object-contain mix-blend-multiply dark:mix-blend-normal dark:brightness-110"
+              />
+            </motion.div>
           </Link>
 
           {/* Desktop Navigation */}
