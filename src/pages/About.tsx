@@ -59,36 +59,38 @@ const About = () => {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-20 md:py-32 bg-background">
-          <div className="container mx-auto px-4 text-center max-w-4xl">
-            <div className="flex items-center justify-center gap-2 mb-8">
-              <span className="w-8 h-px bg-foreground/40"></span>
-              <span className="text-sm font-medium text-foreground/70 tracking-wide uppercase">
-                About Us
-              </span>
-              <span className="w-8 h-px bg-foreground/40"></span>
+        <section className="py-24 md:py-40 bg-background">
+          <div className="w-full px-4 md:px-8 lg:px-16 xl:px-24 text-center">
+            <div className="max-w-4xl mx-auto">
+              <div className="flex items-center justify-center gap-2 mb-10">
+                <span className="w-8 h-px bg-foreground/40"></span>
+                <span className="text-sm font-medium text-foreground/70 tracking-wide uppercase">
+                  About Us
+                </span>
+                <span className="w-8 h-px bg-foreground/40"></span>
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-8">
+                Empowering <span className="font-bodoni italic text-primary">Nigerian Businesses</span>
+              </h1>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Our mission is to empower Nigerian businesses to thrive in the digital age by connecting them with nearby customers through respectful, data-driven marketing
+              </p>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Empowering <span className="font-bodoni italic text-primary">Nigerian Businesses</span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our mission is to empower Nigerian businesses to thrive in the digital age by connecting them with nearby customers through respectful, data-driven marketing
-            </p>
           </div>
         </section>
 
         {/* Our Story */}
-        <section className="py-16 md:py-24">
-          <div className="container mx-auto px-4">
+        <section className="py-20 md:py-32">
+          <div className="w-full px-4 md:px-8 lg:px-16 xl:px-24">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
                 Our Story
               </h2>
-              <div className="prose prose-lg max-w-none text-muted-foreground">
-                <p className="text-lg leading-relaxed mb-6">
+              <div className="prose prose-lg max-w-none text-muted-foreground space-y-8">
+                <p className="text-lg leading-relaxed">
                   Proxim! was born in 2023 when our founders noticed a disconnect: Nigerian smartphone users were exploding in number, yet local businesses struggled to reach them cost-effectively. Reports predicted that mobile penetration would hit 85% and the location-based services market would more than double by 2030.
                 </p>
-                <p className="text-lg leading-relaxed mb-6">
+                <p className="text-lg leading-relaxed">
                   Recognising this opportunity, we built a platform that bridges mobile apps and local merchants. Starting in Lagos with a handful of pilot merchants, we've expanded to Abuja, Port Harcourt and beyond.
                 </p>
                 <p className="text-lg leading-relaxed">
@@ -100,22 +102,22 @@ const About = () => {
         </section>
 
         {/* Values */}
-        <section className="py-16 md:py-24 bg-muted">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <section className="py-20 md:py-32 bg-muted">
+          <div className="w-full px-4 md:px-8 lg:px-16 xl:px-24">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Our Values
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 What drives us every day
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
               {values.map((value, idx) => (
                 <Card key={idx} className="text-center hover:border-secondary transition-colors">
-                  <CardContent className="p-6">
-                    <value.icon className="w-12 h-12 text-secondary mx-auto mb-4" />
-                    <h3 className="text-lg font-bold mb-2">{value.title}</h3>
+                  <CardContent className="p-8">
+                    <value.icon className="w-12 h-12 text-secondary mx-auto mb-6" />
+                    <h3 className="text-lg font-bold mb-3">{value.title}</h3>
                     <p className="text-sm text-muted-foreground">{value.description}</p>
                   </CardContent>
                 </Card>
@@ -125,17 +127,17 @@ const About = () => {
         </section>
 
         {/* Team */}
-        <section className="py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <section className="py-20 md:py-32">
+          <div className="w-full px-4 md:px-8 lg:px-16 xl:px-24">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 The Team Behind Proxim
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                 Combining healthcare innovation, legal expertise, and world-class software engineering to revolutionize proximity marketing in Nigeria
               </p>
             </div>
-            <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
               {team.map((member, idx) => (
                 <Card key={idx} className="hover:shadow-2xl transition-all duration-300 overflow-hidden">
                   <CardContent className="p-0">
@@ -147,17 +149,17 @@ const About = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
                     </div>
-                    <div className="p-8">
-                      <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
-                      <p className="text-secondary font-semibold mb-4">{member.role}</p>
-                      <p className="text-muted-foreground mb-4 leading-relaxed">{member.bio}</p>
+                    <div className="p-10">
+                      <h3 className="text-2xl font-bold mb-3">{member.name}</h3>
+                      <p className="text-secondary font-semibold mb-6">{member.role}</p>
+                      <p className="text-muted-foreground mb-6 leading-relaxed">{member.bio}</p>
                       
-                      <div className="bg-muted/50 border-l-4 border-secondary p-4 mb-4 italic">
+                      <div className="bg-muted/50 border-l-4 border-secondary p-5 mb-6 italic">
                         <p className="text-sm text-foreground">"{member.quote}"</p>
                       </div>
 
-                      <div className="mb-4">
-                        <h4 className="font-semibold text-sm mb-2 text-foreground">Key Expertise:</h4>
+                      <div className="mb-6">
+                        <h4 className="font-semibold text-sm mb-3 text-foreground">Key Expertise:</h4>
                         <div className="flex flex-wrap gap-2">
                           {member.expertise.map((skill, i) => (
                             <span key={i} className="text-xs bg-secondary/10 text-secondary px-3 py-1 rounded-full">
@@ -167,7 +169,7 @@ const About = () => {
                         </div>
                       </div>
 
-                      <div className="flex gap-3 pt-4 border-t border-border">
+                      <div className="flex gap-3 pt-6 border-t border-border">
                         <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
                           <Button variant="outline" size="sm" className="gap-2">
                             <Linkedin className="w-4 h-4" />
@@ -190,19 +192,19 @@ const About = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 md:py-24 bg-secondary">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
+        <section className="py-20 md:py-32 bg-secondary">
+          <div className="w-full px-4 md:px-8 lg:px-16 xl:px-24">
+            <div className="grid md:grid-cols-3 gap-12 text-center max-w-5xl mx-auto">
               <div>
-                <div className="text-5xl font-bold text-secondary-foreground mb-2">2023</div>
+                <div className="text-5xl font-bold text-secondary-foreground mb-3">2023</div>
                 <p className="text-lg text-secondary-foreground/80">Founded</p>
               </div>
               <div>
-                <div className="text-5xl font-bold text-secondary-foreground mb-2">3+</div>
+                <div className="text-5xl font-bold text-secondary-foreground mb-3">3+</div>
                 <p className="text-lg text-secondary-foreground/80">Major Cities</p>
               </div>
               <div>
-                <div className="text-5xl font-bold text-secondary-foreground mb-2">140M+</div>
+                <div className="text-5xl font-bold text-secondary-foreground mb-3">140M+</div>
                 <p className="text-lg text-secondary-foreground/80">Users Reached</p>
               </div>
             </div>
@@ -210,15 +212,15 @@ const About = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-16 md:py-24">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+        <section className="py-20 md:py-32">
+          <div className="w-full px-4 md:px-8 lg:px-16 xl:px-24 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
               Join us in transforming Nigerian businesses
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
               Whether you're a business owner or app developer, let's grow together
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-5 justify-center">
               <Link to="/contact">
                 <Button variant="default" size="lg">
                   Get in Touch

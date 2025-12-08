@@ -130,15 +130,9 @@ All colors MUST be HSL.
     font-weight: 400;
   }
 
-  /* Custom cursor - hide default on desktop for interactive elements */
-  @media (min-width: 1024px) {
-    body {
-      cursor: none;
-    }
-
-    a, button, [role="button"], .interactive {
-      cursor: none;
-    }
+  /* Custom cursor colors on hover */
+  a:hover, button:hover, [role="button"]:hover, .interactive:hover {
+    cursor: pointer;
   }
 
   h1, h2, h3, h4, h5, h6 {

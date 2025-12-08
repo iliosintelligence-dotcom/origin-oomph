@@ -17,10 +17,10 @@ const HeroSection = () => {
   return (
     <section ref={containerRef} className="relative bg-background min-h-[85vh] flex flex-col justify-center overflow-hidden">
       <motion.div 
-        className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10 py-32 md:py-40 lg:py-48"
+        className="w-full px-4 md:px-8 lg:px-16 xl:px-24 relative z-10 py-32 md:py-40 lg:py-48"
         style={{ y: textY, opacity }}
       >
-        <div className="max-w-3xl">
+        <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,7 +46,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-muted-foreground leading-relaxed max-w-xl mb-14"
+            className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-14"
           >
             Proxim connects your business directly to geofenced users inside the apps they already use—capturing customer attention the moment they enter your service area.
           </motion.p>
@@ -55,7 +55,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-5"
+            className="flex flex-col sm:flex-row gap-5 justify-center"
           >
             <Link to="/contact">
               <Button 
@@ -84,21 +84,23 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.5 }}
-        className="container mx-auto px-6 md:px-12 lg:px-20 pb-20"
+        className="w-full px-4 md:px-8 lg:px-16 xl:px-24 pb-20"
       >
-        <p className="text-xs text-muted-foreground mb-6 tracking-wide">Trusted by leading Nigerian businesses</p>
-        <div className="flex flex-wrap items-center gap-8 md:gap-12">
-          {["Partner App", "Retail Brand", "Restaurant Chain", "Lifestyle App", "QSR Brand"].map((name, i) => (
-            <motion.span
-              key={name}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.6 + i * 0.1 }}
-              className="text-sm font-medium text-foreground/40"
-            >
-              {name}
-            </motion.span>
-          ))}
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-xs text-muted-foreground mb-6 tracking-wide">Trusted by leading Nigerian businesses</p>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+            {["Partner App", "Retail Brand", "Restaurant Chain", "Lifestyle App", "QSR Brand"].map((name, i) => (
+              <motion.span
+                key={name}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.6 + i * 0.1 }}
+                className="text-sm font-medium text-foreground/40"
+              >
+                {name}
+              </motion.span>
+            ))}
+          </div>
         </div>
       </motion.div>
     </section>

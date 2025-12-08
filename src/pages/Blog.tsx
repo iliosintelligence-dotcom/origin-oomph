@@ -117,9 +117,9 @@ const Blog = () => {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-20 md:py-32 bg-muted">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto space-y-6">
+        <section className="py-24 md:py-40 bg-muted">
+          <div className="w-full px-4 md:px-8 lg:px-16 xl:px-24">
+            <div className="max-w-4xl mx-auto space-y-8">
               <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
                 Insights on proximity marketing in Nigeria
               </h1>
@@ -131,9 +131,9 @@ const Blog = () => {
         </section>
 
         {/* Categories Filter */}
-        <section className="py-8 border-b bg-background sticky top-16 md:top-20 z-40">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-wrap gap-2 justify-center">
+        <section className="py-10 border-b bg-background sticky top-16 md:top-20 z-40">
+          <div className="w-full px-4 md:px-8 lg:px-16 xl:px-24">
+            <div className="flex flex-wrap gap-3 justify-center">
               {categories.map((category) => (
                 <Button
                   key={category}
@@ -149,12 +149,12 @@ const Blog = () => {
         </section>
 
         {/* Blog Posts Grid */}
-        <section className="py-20 md:py-32">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section className="py-24 md:py-36">
+          <div className="w-full px-4 md:px-8 lg:px-16 xl:px-24">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
               {blogPosts.map((post) => (
                 <Card key={post.id} className="hover:border-secondary transition-colors">
-                  <CardContent className="p-6 space-y-4">
+                  <CardContent className="p-8 space-y-5">
                     <div className="flex items-center justify-between">
                       <Badge variant="outline">{post.category}</Badge>
                       <div className="flex items-center text-sm text-muted-foreground">
@@ -166,7 +166,7 @@ const Blog = () => {
                       {post.title}
                     </h3>
                     <p className="text-muted-foreground">{post.excerpt}</p>
-                    <div className="pt-4 border-t space-y-3">
+                    <div className="pt-5 border-t space-y-3">
                       <div className="flex items-center text-sm text-muted-foreground">
                         <User className="w-4 h-4 mr-2" />
                         {post.author}
@@ -190,16 +190,16 @@ const Blog = () => {
         </section>
 
         {/* Newsletter CTA */}
-        <section className="py-20 md:py-32 bg-secondary">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto space-y-8">
+        <section className="py-24 md:py-36 bg-secondary">
+          <div className="w-full px-4 md:px-8 lg:px-16 xl:px-24">
+            <div className="max-w-3xl mx-auto space-y-10">
               <h2 className="text-3xl md:text-5xl font-bold text-secondary-foreground">
                 Stay updated with proximity marketing insights
               </h2>
               <p className="text-xl text-secondary-foreground/90">
                 Get the latest tips, case studies, and industry trends delivered to your inbox
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-5">
                 <input
                   type="email"
                   placeholder="Your email address"
