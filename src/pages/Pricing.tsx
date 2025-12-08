@@ -100,10 +100,10 @@ const Pricing = () => {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-20 md:py-32 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="space-y-6">
+        <section className="py-24 md:py-40 bg-background">
+          <div className="w-full px-4 md:px-8 lg:px-16 xl:px-24">
+            <div className="grid lg:grid-cols-2 gap-20 items-center">
+              <div className="space-y-8">
                 <div className="flex items-center gap-2">
                   <span className="w-8 h-px bg-foreground/40"></span>
                   <span className="text-sm font-medium text-foreground/70 tracking-wide uppercase">
@@ -136,34 +136,34 @@ const Pricing = () => {
         </section>
 
         {/* Business Pricing */}
-        <section className="py-20 md:py-28">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <span className="text-sm font-semibold text-secondary uppercase tracking-wider mb-3 block">For Business Clients</span>
-              <h2 className="font-bodoni text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
+        <section className="py-24 md:py-36">
+          <div className="w-full px-4 md:px-8 lg:px-16 xl:px-24">
+            <div className="text-center mb-20">
+              <span className="text-sm font-semibold text-secondary uppercase tracking-wider mb-4 block">For Business Clients</span>
+              <h2 className="font-bodoni text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
                 Drive Foot Traffic with Location-Based Offers
               </h2>
             </div>
-            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {businessPlans.map((plan, idx) => (
                 <div 
                   key={idx} 
-                  className={`relative bg-background rounded-2xl p-8 border ${plan.popular ? 'border-secondary ring-1 ring-secondary' : 'border-border'}`}
+                  className={`relative bg-background rounded-2xl p-10 border ${plan.popular ? 'border-secondary ring-1 ring-secondary' : 'border-border'}`}
                 >
                   {plan.popular && (
                     <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground rounded-full px-4">
                       Most Popular
                     </Badge>
                   )}
-                  <div className="mb-6">
-                    <h3 className="text-xl font-bold text-foreground mb-1">{plan.name}</h3>
+                  <div className="mb-8">
+                    <h3 className="text-xl font-bold text-foreground mb-2">{plan.name}</h3>
                     <p className="text-sm text-muted-foreground">{plan.idealFor}</p>
                   </div>
-                  <div className="mb-8">
+                  <div className="mb-10">
                     <span className="text-4xl font-bold text-foreground">{plan.price}</span>
-                    <p className="text-sm text-muted-foreground mt-1">{plan.priceNote}</p>
+                    <p className="text-sm text-muted-foreground mt-2">{plan.priceNote}</p>
                   </div>
-                  <ul className="space-y-4 mb-8">
+                  <ul className="space-y-5 mb-10">
                     {plan.features.map((feature, fIdx) => (
                       <li key={fIdx} className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
@@ -186,34 +186,34 @@ const Pricing = () => {
         </section>
 
         {/* App Partner Pricing */}
-        <section className="py-20 md:py-28 bg-foreground/[0.02]">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <span className="text-sm font-semibold text-secondary uppercase tracking-wider mb-3 block">For App Partners</span>
-              <h2 className="font-bodoni text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
+        <section className="py-24 md:py-36 bg-foreground/[0.02]">
+          <div className="w-full px-4 md:px-8 lg:px-16 xl:px-24">
+            <div className="text-center mb-20">
+              <span className="text-sm font-semibold text-secondary uppercase tracking-wider mb-4 block">For App Partners</span>
+              <h2 className="font-bodoni text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
                 Monetise Your App with Location-Based Ads
               </h2>
             </div>
-            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {partnerTiers.map((tier, idx) => (
                 <div 
                   key={idx} 
-                  className={`relative bg-background rounded-2xl p-8 border ${tier.popular ? 'border-secondary ring-1 ring-secondary' : 'border-border'}`}
+                  className={`relative bg-background rounded-2xl p-10 border ${tier.popular ? 'border-secondary ring-1 ring-secondary' : 'border-border'}`}
                 >
                   {tier.popular && (
                     <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground rounded-full px-4">
                       Most Popular
                     </Badge>
                   )}
-                  <div className="mb-6">
-                    <h3 className="text-xl font-bold text-foreground mb-1">{tier.name}</h3>
+                  <div className="mb-8">
+                    <h3 className="text-xl font-bold text-foreground mb-2">{tier.name}</h3>
                     <p className="text-sm text-muted-foreground">{tier.idealFor}</p>
                   </div>
-                  <div className="mb-8">
+                  <div className="mb-10">
                     <span className="text-4xl font-bold text-foreground">{tier.price}</span>
-                    <p className="text-sm text-muted-foreground mt-1">integration</p>
+                    <p className="text-sm text-muted-foreground mt-2">integration</p>
                   </div>
-                  <ul className="space-y-4 mb-8">
+                  <ul className="space-y-5 mb-10">
                     {tier.features.map((feature, fIdx) => (
                       <li key={fIdx} className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
@@ -236,64 +236,66 @@ const Pricing = () => {
         </section>
 
         {/* FAQ Pricing */}
-        <section className="py-20 md:py-28">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="text-center mb-16">
-              <span className="text-sm font-semibold text-secondary uppercase tracking-wider mb-3 block">FAQ</span>
-              <h2 className="font-bodoni text-3xl md:text-4xl lg:text-5xl text-foreground">
-                Pricing Questions
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-background rounded-2xl border border-border p-6">
-                <h3 className="font-bold text-lg mb-3 text-foreground">What payment methods do you accept?</h3>
-                <p className="text-muted-foreground">
-                  We accept card payments, bank transfers, and mobile money. All plans are billed in Nigerian Naira.
-                </p>
+        <section className="py-24 md:py-36">
+          <div className="w-full px-4 md:px-8 lg:px-16 xl:px-24">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-20">
+                <span className="text-sm font-semibold text-secondary uppercase tracking-wider mb-4 block">FAQ</span>
+                <h2 className="font-bodoni text-3xl md:text-4xl lg:text-5xl text-foreground">
+                  Pricing Questions
+                </h2>
               </div>
-              <div className="bg-background rounded-2xl border border-border p-6">
-                <h3 className="font-bold text-lg mb-3 text-foreground">Can I cancel anytime?</h3>
-                <p className="text-muted-foreground">
-                  Yes, you can cancel your subscription at any time. No long-term contracts or cancellation fees.
-                </p>
-              </div>
-              <div className="bg-background rounded-2xl border border-border p-6">
-                <h3 className="font-bold text-lg mb-3 text-foreground">What if I exceed my message quota?</h3>
-                <p className="text-muted-foreground">
-                  Additional messages are billed at an affordable per-impression rate. You'll see usage in your dashboard.
-                </p>
-              </div>
-              <div className="bg-background rounded-2xl border border-border p-6">
-                <h3 className="font-bold text-lg mb-3 text-foreground">How do app partners get paid?</h3>
-                <p className="text-muted-foreground">
-                  You receive monthly payouts in Nigerian naira based on impressions, clicks and conversions delivered.
-                </p>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-background rounded-2xl border border-border p-8">
+                  <h3 className="font-bold text-lg mb-4 text-foreground">What payment methods do you accept?</h3>
+                  <p className="text-muted-foreground">
+                    We accept card payments, bank transfers, and mobile money. All plans are billed in Nigerian Naira.
+                  </p>
+                </div>
+                <div className="bg-background rounded-2xl border border-border p-8">
+                  <h3 className="font-bold text-lg mb-4 text-foreground">Can I cancel anytime?</h3>
+                  <p className="text-muted-foreground">
+                    Yes, you can cancel your subscription at any time. No long-term contracts or cancellation fees.
+                  </p>
+                </div>
+                <div className="bg-background rounded-2xl border border-border p-8">
+                  <h3 className="font-bold text-lg mb-4 text-foreground">What if I exceed my message quota?</h3>
+                  <p className="text-muted-foreground">
+                    Additional messages are billed at an affordable per-impression rate. You'll see usage in your dashboard.
+                  </p>
+                </div>
+                <div className="bg-background rounded-2xl border border-border p-8">
+                  <h3 className="font-bold text-lg mb-4 text-foreground">How do app partners get paid?</h3>
+                  <p className="text-muted-foreground">
+                    You receive monthly payouts in Nigerian naira based on impressions, clicks and conversions delivered.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="py-8 md:py-12 pb-16 md:pb-24">
-          <div className="container mx-auto px-4">
+        <section className="py-12 md:py-16 pb-20 md:pb-32">
+          <div className="w-full px-4 md:px-8 lg:px-16 xl:px-24">
             <div className="relative rounded-3xl overflow-hidden">
               <div className="absolute inset-0 bg-foreground" />
-              <div className="relative z-10 px-6 py-16 md:py-20 text-center">
-                <h2 className="font-bodoni text-3xl md:text-4xl lg:text-5xl text-background mb-4">
+              <div className="relative z-10 px-8 py-20 md:py-28 text-center">
+                <h2 className="font-bodoni text-3xl md:text-4xl lg:text-5xl text-background mb-6">
                   Ready to Get Started?
                 </h2>
-                <p className="text-lg text-background/80 mb-8 max-w-2xl mx-auto">
+                <p className="text-lg text-background/80 mb-10 max-w-2xl mx-auto">
                   Start your free trial or book a demo to see Proxim in action
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <div className="flex flex-col sm:flex-row gap-5 justify-center">
                   <Link to="/contact">
-                    <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-full px-8">
+                    <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-full px-10">
                       Start Free Trial
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                   </Link>
                   <Link to="/contact">
-                    <Button size="lg" variant="outline" className="bg-transparent border-background/30 text-background hover:bg-background/10 rounded-full px-8">
+                    <Button size="lg" variant="outline" className="bg-transparent border-background/30 text-background hover:bg-background/10 rounded-full px-10">
                       Book a Demo
                     </Button>
                   </Link>

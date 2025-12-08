@@ -213,10 +213,10 @@ const AppPartners = () => {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-20 md:py-32 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="space-y-6">
+        <section className="py-24 md:py-40 bg-background">
+          <div className="w-full px-4 md:px-8 lg:px-16 xl:px-24">
+            <div className="grid lg:grid-cols-2 gap-20 items-center">
+              <div className="space-y-8">
                 <div className="flex items-center gap-2">
                   <span className="w-8 h-px bg-foreground/40"></span>
                   <span className="text-sm font-medium text-foreground/70 tracking-wide uppercase">
@@ -230,7 +230,7 @@ const AppPartners = () => {
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   Turn your Nigerian user base into a revenue stream. Easy integration, privacy-first approach, and transparent revenue sharing.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-5">
                   <a href="#calculator">
                     <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
                       Calculate Revenue Potential
