@@ -37,7 +37,7 @@ const ParallaxImageWrapper = ({
       <motion.img src={src} alt={alt} style={{
       y,
       scale
-    }} onLoad={() => setIsLoaded(true)} className="object-scale-down" />
+    }} onLoad={() => setIsLoaded(true)} className="object-contain" />
     </motion.div>;
 };
 const valueProps = [{
