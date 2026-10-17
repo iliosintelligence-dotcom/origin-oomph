@@ -36,14 +36,14 @@ const benefits = [
 
 const BenefitsSection = () => {
   return (
-    <section className="py-32 md:py-48 bg-card">
-      <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-6xl">
+    <section className="bg-card py-28 md:py-36">
+      <div className="w-full px-6 md:px-12 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-xl mb-24"
+          className="mb-20 max-w-3xl md:mb-24"
         >
           <span className="text-xs font-medium text-muted-foreground tracking-widest uppercase mb-8 block">
             Benefits
@@ -57,7 +57,7 @@ const BenefitsSection = () => {
           </p>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3">
           {benefits.map((benefit, idx) => (
             <motion.div
               key={idx}
@@ -65,12 +65,12 @@ const BenefitsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group"
+              className="border-t border-border py-8 md:pr-10"
             >
-              <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-foreground/5 text-foreground mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <div className="mb-5 inline-flex h-8 w-8 items-center justify-center text-primary">
                 <benefit.icon className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-3 leading-tight">{benefit.title}</h3>
+              <h3 className="mb-3 text-lg font-bold leading-tight text-foreground">{benefit.title}</h3>
               <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
             </motion.div>
           ))}

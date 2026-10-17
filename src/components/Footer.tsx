@@ -20,7 +20,7 @@ const Footer = () => {
     label: "Instagram"
   }];
   return <footer className="bg-secondary text-secondary-foreground">
-      <div className="container mx-auto px-4 py-12 md:py-16">
+      <div className="w-full px-6 py-14 md:px-12 md:py-16 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <motion.div initial={{
