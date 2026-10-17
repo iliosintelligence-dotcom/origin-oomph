@@ -73,6 +73,7 @@ const ValuePropsSection = () => {
         once: true
       }} transition={{
         duration: 0.6
+      }}
         className="mb-20 max-w-3xl md:mb-24">
           <span className="text-xs font-medium text-muted-foreground tracking-widest uppercase mb-8 block">
             Why Proxim
