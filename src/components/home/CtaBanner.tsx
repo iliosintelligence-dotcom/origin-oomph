@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 const CtaBanner = () => {
   return (
-    <section className="py-32 md:py-48 bg-secondary text-secondary-foreground">
-      <div className="container mx-auto px-6 md:px-12 lg:px-20">
+    <section className="bg-secondary py-28 text-secondary-foreground md:py-36">
+      <div className="w-full px-6 md:px-12 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ const CtaBanner = () => {
             <Link to="/contact">
               <Button 
                 size="lg" 
-                className="w-full sm:w-auto bg-background hover:bg-background/90 text-foreground px-10 py-7 rounded-full transition-all duration-300 hover:scale-105"
+                className="w-full rounded-md bg-background px-8 text-foreground hover:bg-background/90 sm:w-auto"
               >
                 Start Your Free Pilot
                 <ArrowRight className="ml-2 w-4 h-4" />
@@ -52,7 +52,7 @@ const CtaBanner = () => {
               <Button 
                 variant="ghost"
                 size="lg" 
-                className="w-full sm:w-auto text-secondary-foreground hover:bg-secondary-foreground/10 px-10 py-7 rounded-full transition-all duration-300"
+                className="w-full rounded-md px-8 text-secondary-foreground hover:bg-secondary-foreground/10 sm:w-auto"
               >
                 View Pricing Plans
               </Button>

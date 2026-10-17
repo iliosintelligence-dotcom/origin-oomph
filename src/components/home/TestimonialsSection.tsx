@@ -20,14 +20,14 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-32 md:py-48 bg-card">
-      <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-6xl">
+    <section className="bg-card py-28 md:py-36">
+      <div className="w-full px-6 md:px-12 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-xl mb-24"
+          className="mb-20 max-w-3xl md:mb-24"
         >
           <span className="text-xs font-medium text-muted-foreground tracking-widest uppercase mb-8 block">
             Testimonials

@@ -25,16 +25,14 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-      className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80"
+      className="sticky top-0 z-50 w-full border-b border-border/70 bg-background"
     >
-      <div className="container mx-auto px-6 md:px-12 lg:px-20">
+      <div className="w-full px-6 md:px-12 lg:px-20">
         <nav className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <motion.div
-              className="h-12 md:h-14 w-auto"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.2 }}
+              className="h-12 w-auto md:h-14"
             >
               <img 
                 src={logo} 
@@ -82,11 +80,13 @@ const Header = () => {
           </motion.div>
 
           {/* Mobile Menu Button */}
-          <motion.button
-            whileTap={{ scale: 0.95 }}
-            className="lg:hidden p-2 text-foreground"
+          <Button
+            variant="ghost"
+            size="icon"
+            className="lg:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
           >
             <AnimatePresence mode="wait">
               {isMenuOpen ? (
@@ -111,7 +111,7 @@ const Header = () => {
                 </motion.div>
               )}
             </AnimatePresence>
-          </motion.button>
+          </Button>
         </nav>
 
         {/* Mobile Menu */}

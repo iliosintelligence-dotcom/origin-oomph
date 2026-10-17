@@ -17,14 +17,14 @@ const stats = [
 
 const StatsSection = () => {
   return (
-    <section className="py-24 md:py-32 bg-secondary text-secondary-foreground">
-      <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-6xl">
+    <section className="bg-secondary py-24 text-secondary-foreground md:py-32">
+      <div className="w-full px-6 md:px-12 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-20"
+          className="mb-16 md:mb-20"
         >
           <span className="text-xs font-medium text-secondary-foreground/60 tracking-widest uppercase mb-6 block">
             Market Opportunity

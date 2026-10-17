@@ -7,6 +7,7 @@ import illustrationGeofencing from "@/assets/illustration-geofencing.png";
 import illustrationRevenueGrowth from "@/assets/illustration-revenue-growth.png";
 import illustrationAnalytics from "@/assets/illustration-analytics.jpg";
 import { ImageSkeleton } from "@/components/ui/content-skeleton";
+import { ImageReveal } from "@/components/ui/image-reveal";
 
 // Parallax image wrapper with loading skeleton
 const ParallaxImageWrapper = ({
@@ -28,17 +29,19 @@ const ParallaxImageWrapper = ({
   });
   const y = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.05, 1, 1.05]);
-  return <motion.div ref={ref} className={`relative overflow-hidden rounded-lg ${className}`} whileHover={{
-    scale: 1.02
-  }} transition={{
-    duration: 0.3
-  }}>
+  return (
+    <ImageReveal className={`relative aspect-[4/3] overflow-hidden bg-muted/45 ${className}`}>
       {!isLoaded && <ImageSkeleton className="absolute inset-0" />}
-      <motion.img src={src} alt={alt} style={{
-      y,
-      scale
-    }} onLoad={() => setIsLoaded(true)} className="object-contain" />
-    </motion.div>;
+      <motion.img
+        ref={ref as React.Ref<HTMLImageElement>}
+        src={src}
+        alt={alt}
+        style={{ y, scale }}
+        onLoad={() => setIsLoaded(true)}
+        className="h-full w-full object-contain p-6 md:p-10"
+      />
+    </ImageReveal>
+  );
 };
 const valueProps = [{
   icon: MapPin,
@@ -58,8 +61,8 @@ const valueProps = [{
   image: illustrationAnalytics
 }];
 const ValuePropsSection = () => {
-  return <section className="py-32 md:py-48 bg-card">
-      <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-7xl">
+  return <section className="bg-card py-28 md:py-36">
+      <div className="w-full px-6 md:px-12 lg:px-20">
         <motion.div initial={{
         opacity: 0,
         y: 30
@@ -70,7 +73,7 @@ const ValuePropsSection = () => {
         once: true
       }} transition={{
         duration: 0.6
-      }} className="max-w-2xl mb-24 md:mb-32">
+        className="mb-20 max-w-3xl md:mb-24">
           <span className="text-xs font-medium text-muted-foreground tracking-widest uppercase mb-8 block">
             Why Proxim
           </span>
@@ -83,7 +86,7 @@ const ValuePropsSection = () => {
           </p>
         </motion.div>
         
-        <div className="space-y-32 md:space-y-48">
+        <div className="space-y-24 md:space-y-32">
           {valueProps.map((prop, idx) => <motion.div key={idx} initial={{
           opacity: 0,
           y: 40
@@ -110,7 +113,7 @@ const ValuePropsSection = () => {
             }} transition={{
               duration: 0.4,
               delay: 0.2
-            }} className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-foreground/5 text-foreground">
+            }} className="inline-flex h-10 w-10 items-center justify-center text-primary">
                   <prop.icon className="w-5 h-5" />
                 </motion.div>
                 <h3 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">{prop.title}</h3>
