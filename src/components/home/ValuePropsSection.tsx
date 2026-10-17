@@ -19,7 +19,7 @@ const ParallaxImageWrapper = ({
   alt: string;
   className?: string;
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLImageElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const {
     scrollYProgress
@@ -33,7 +33,7 @@ const ParallaxImageWrapper = ({
     <ImageReveal className={`relative aspect-[4/3] overflow-hidden bg-muted/45 ${className}`}>
       {!isLoaded && <ImageSkeleton className="absolute inset-0" />}
       <motion.img
-        ref={ref as React.Ref<HTMLImageElement>}
+        ref={ref}
         src={src}
         alt={alt}
         style={{ y, scale }}
